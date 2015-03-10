@@ -296,8 +296,14 @@
 (defrule temp-synonym
 	(temperature low) => (assert (temperature cold))
 )
+(defrule low-lat-cold
+	(lowlat yes) => (assert (cold yes))
+)
+(defrule high-lat-cold
+	(highlat yes) => (assert (hot yes))
+)
 
-; ======== SOLUTIONS =========
+; ======== LOCATIONS =========
 
 (deffunction location (?loc)
 	(assert (found-location ?loc))
