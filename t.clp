@@ -236,7 +236,7 @@
 (defrule air-high-alt
 	(air-pressure low)
 	=>
-	(altitude high)
+	(assert (altitude high))
 )
 (defrule highsee
 	(altitude high)
@@ -296,11 +296,14 @@
 (defrule temp-synonym
 	(temperature low) => (assert (temperature cold))
 )
-(defrule low-lat-cold
-	(lowlat yes) => (assert (cold yes))
-)
 (defrule high-lat-cold
-	(highlat yes) => (assert (hot yes))
+	(highlat yes) => (assert (cold yes))
+)
+(defrule low-lat-hot
+	(lowlat yes)
+	(altitude low)
+  =>
+	(assert (hot yes))
 )
 
 ; ======== LOCATIONS =========
