@@ -1,0 +1,110 @@
+Rafał Cieślak
+Zadanie z Regułowych Systemów Produkcji
+realizowane w ramach przedmiotu Sztuczna Inteligencja
+w ramach studiów na kierunku Informatyka
+na Uniwersytecie Wrocławskim
+semestr letni 2014/2015
+
+============================================
+Program rozpoznający położenie geograficzne na podstawie prostych obserwacji
+otoczenia.
+============================================
+
+  Uważam, że wymóg oceniania nakazujący pisanie raportu w postaci wypunktowanego
+szablonu jest absolutnie bez sensu, ponieważ zmuszałby mnie do schematycznego
+opisania mojej pracy, co bardzo zawężałoby użyteczność takiego opisu. Zdaję
+sobie sprawę, że złamanie tej reguły oznacza automatyczne przyznanie 3 punktów
+karnych, ale uznałem że napisanie raportu, który posiada jakąś wartość
+merytoryczną, jest cenniejsze, niż te kilka punktów do oceny.
+
+============================================
+
+  Program, który przygotowałem w ramach tego zadania, zajmuje się problemem
+rozpoznawania lokalizacji geograficznej na podstawie cech charakterystycznych
+otoczenia obserwatora. System regułowy stawia użytkownikowi (obserwatorowi)
+zestaw pytań dotyczących natury otoczenia (temperatura, wilgotność, stopień
+zalesienia, ilość śniegu itp.), i próbuje, na podstawie wprowadzonych
+odpowiedzi, odgadnąć miejsce, którego dotyczą się takie obserwacje.
+W niektórych przypadkach wynik programu jest bardzo precyzyjny - z dokładnością
+do miasta lub konkretnej pustynii, w innych jest mniej dokładny - np. strefa
+klimatyczna lub rejon geograficzny, a w innych podaje odpowiedź bardzo ogólną
+(np. ocean) lub stwierdza, że takie obserwacje nie pasują do żadnego ze znanych
+(programowi) miejsc na świecie.
+  Treści wnioskowań i wiedza, której użyłem do stworzenia programu, to w dużym
+stopniu wiedza własna, ale korzystałem też z atlasów geograficznych i informacji
+o strefach klimatycznych na Wikipedii. Wiedza zawarta w programie jest dwojakiej
+natury. Po pierwsze, program posiada informacje dotyczące rozpoznawania miejsc
+na świecie na podstawie pewnych cech. Po drugie, program potrafi wnioskować o
+istnieniu niektórych cech na podstawie innych. To sprawia, że program zadaje
+możliwie mało pytań, jeżeli jakiś fakt można wydedukować na podstawie innych
+obserwacji wprowadzonych przez użytkownika, to program dokona tego samoczynnie.
+To sprawia, że zestaw pytań przezentowany użytkownikowi może być bardzo różny
+w zależności od udzielanych odpowiedzi. Dodatkowo, aby urozmaicić interakcję
+z programem, polecam użycie strategii losowej (set-strategy random), co sprawia,
+że pytania przedstawiane są w porządku niedeterministycznym. Ze względu na
+naturę programu, kolejność pytań nie będzie wpływać na poprawność jego pracy.
+  Sam kod programu korzysta tylko z podstawowych możliwości CLIPSa - są nimi
+proste reguły i kilka własnych funkcji. Zbiór reguł można podzielić na trzy
+części - reguły zadające pytania, reguły używane do wnioskowania o faktach
+pośrednich, i reguły podające odpowiedź (rozpoznające położenie). Pierwszy
+zestaw reguł ma nadany najniższy priorytet uruchamiania, a ostatni najwyższy -
+to powoduje, że program zada możliwie najmniej pytań, a odpowiedź poda
+tak wcześnie, jak tylko jest to możliwe. Pytania zadawane użytkownikowi
+zaprojektowałem tak, by były możliwie najbanalniejsze - dzięki czemu mogą
+reprezentować proste pomiary z automatycznych czujników, co umożliwiałoby
+zastosowanie programu na pokładzie autonomicznego robota - zatem minimalizacja
+ilości pytań oszczędza pomiary, co jest niewątpliwie mile widzianą cechą.
+  Aby zweryfikować działanie programu, przeprowadziłem kilka serii testów.
+Po pierwsze, dla każdego z miejsc rozpoznawanych przez program, sprawdziłem,
+czy udzielanie odpowiedzi zgodnie z cechami tego miejsca faktycznie prowadzi
+do oczekowanego wyniku, tj. czy wszystkie możliwe odpowiedzi programu są
+osiągalne. Program potrafi odróżnić 20 różnych lokalizacji (co w pewnym sensie
+jest bardzo małą liczbą, ponieważ nie daje dużej precyzji odpowiedzi, ale
+ponieważ odpowiedzi są dość różnorodne, to okazuje się, że wybierając losowy
+punkt na powierzchni Ziemi - z równym prawdopodobieństwem według pola
+powierzchni - to z prawdopodobieństwem conajmniej 80% program udzieli odpowiedzi
+poprawnej). Aby ocenić jak trafne odpowiedzi produkuje program, poprosiłem kilku
+kolegów, aby kilkukrotnie pozwolili programowi odgadnąć wymyślone przez nich
+miejsce. Okazało się, że chociaż program nie odgadł dokładnie miejsc
+proponowanych przez testerów (np. Wrocław, wioska Eskimosów, Mt. Everest), to
+odpowiedzi były poprawne, tylko mniej dokładne (miasto, pustynia arktyczna,
+wysokie góry). Udało mi się też odnaleść miejsca (np. bagna), dla których
+program nie jest w stanie wyciągnąć żadnego wniosku, o czym informuje użytkownika
+po zadaniu wszystkich możliwych pytań.
+  Nie spodziewam się, aby ten program mógł być w jakikolwiek sposób przydatny
+w praktyce. Jedyne co potrafi osiągnąć, to bardzo niedokładnie określić
+położenie obserwatora - ale istnieją popularne technologie, które podają pozycje
+z dużo większą dokładnością, np. GPS, a więc są dużo bardziej przydatniejsze.
+Oczywiście, można próbować odnaleść wartość mojego programu, na przykład w
+sytuacji gdy chcemy rozpoznać miejsce na podstawie jego zdjęcia, lub gdy
+prowadzimy rozmowę telefoniczą z zagubionym - czyli w przypadkach, gdy pomiar
+położenia nie jest możliwy, ponieważ nie jesteśmy w stanie umieścić urządzenia
+pomiarowego w miejscu, które chcemy badać - ale taka argumentacja jest na siłę
+i spodziewam się, że jedynym prawdziwym walorem tego programu jest jego wartość
+edukacyjna: w postaci eleganckiego przykładu nieskomplikowanego (ale
+niebanalnego!) systemu regułowego. Ze względu na prostotę konstrukcji programu
+możliwości jego rozwoju są dość spore - przede wszystkim warto byloby poszerzyć
+bazę rozpoznawanych miejsc, co pośrednio oznacza dodanie nowych cech, o których
+program wnioskuje lub pyta. Inna możliwa opcja rozwoju to zintegrowanie programu
+z mechanizmami rozpoznawania obrazu, co umożliwiłoby automatyczną kategoryzację
+zdjęć według ich miejsca powstania.
+  Zgodnie z prośbą, dokonuję też samooceny: uważam, że za dobrany temat należą
+mi się cztery punkty, ponieważ (co tak naprawdę wyszło dopiero w praktyce)
+pomysł, który realizuję, daje szerokie możliwości do implementowania pośrednich
+wnioskowań, więc jest raczej ciekawym przykładem systemu regułowego. Za wiedzę
+przyznałbym sobie 4 pkt - czyli odjąłbym jeden za fakt, że nie jestem prawdziwym
+specem od geografii, i możliwe jest, że po konsultacjach z lepszym znawcą,
+pisałbym program, który skupia się na innych cechach geogragicznych. Jednak
+opierając się tylko na własnej wiedzy nie miałem problemów z zaprojektowaniem
+sensownych reguł i doborze cech charakterystycznych rejonów geograficznych.
+W podpunkcie oceny za sam program nie mam sobie nic do zarzucenia, natomiast za
+testowanie ocenię się na 4 z 5 punktów, ponieważ żałuję, że nie udało mi się
+zautomatyzować procesu testowania (co byłoby wyjątkowo przydatne w przypadku
+systemu wnioskowania - albowiem wiele reguł w programie współpracuje na zasadzie
+sprężenia zwrotnego, więc łatwo niechcący zepsuć niektóre części programu
+poprzez dopisywanie innych nowych). W końcu, ponieważ jestem pewien swoich
+wniosków, za ostatni punkt oceny nagrodziłbym się pełnymi punktami, ale
+spodziewam się, że to za ten podpunkt tracę punkty, ponieważ piszę prozą, a nie
+wypunktowanym schematem.
+
+Rafał Cieślak

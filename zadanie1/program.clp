@@ -5,29 +5,7 @@
 ; na Uniwersytecie Wrocławskim
 ; semestr letni 2014/2015
 ;
-; ============================================
-; Program rozpoznający położenie geograficzne na podstawie prostych obserwacji
-; otoczenia.
-; ============================================
-;
-; Program zadaje użytkownikowi serię pytań dotczących obserwowanego otoczenia.
-; Pytania symbolizują proste spostrzeżenia, większość z nich możnaby łatwo
-; wykonać automatycznie za pomocą sprzętu pomiarowego.
-; Na podstawie odpowiedzi program próbuje budować uproszczony model środowiska
-; na który składają się różne fakty dotyczące otoczenia. Sporo z obserwacji
-; można wywnioskować na podstawie wcześniejszych odpowiedzi - w miarę możliwości
-; program stara się zadać jak najmniej pytań (by możliwie uprościć interakcję,
-; lub by uniknąć dużej liczby pomiarów), i wnioskować z nich możliwie wiele
-; faktów. Program podaje potencjalną lokalizację obserwatora (czasami jest
-; to stwierdzenie ogólne np. "ocean", czasami dokładnie strefa klimatyczna,
-; a czasami wręcz precyzyjne położenie geograficzne np. "pustynia Atakama") gdy
-; tylko wprowadzone obserwacje umożliwiają na jej określenie.
-; Skuteczność programu w większości zależy od stopnia rozbudowania wewnętrznej
-; bazy możliwych położeń i określenia cech charakterystycznych dla różnych
-; miejsc. W tej wersji program mniej więcej poprawnie rozpoznaje około 20
-; różnych rejonów geograficznych. W przypadku wprowadzenia obserwacji
-; pochodzących z innego rejonu, program może albo podać nieprecyzyjną odpowiedź,
-; albo wskazać, że nie zna żadnego miejsca pasujęcego do wprowadzonego opisu.
+; Opis programu znajduje się w dołączonym pliku `raport.txt`
 
 (deffunction yesno (?question)
 	(printout t ?question " [yes/no] ")
