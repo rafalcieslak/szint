@@ -42,7 +42,10 @@ namespace Connect4
 				Console.WriteLine("Recommended move: " + (node.bestmove+1) + " (" + node.value + ")");
 			}else{
 				int move = c - '0' - 1;
-				gs.PerformMove(move);
+				if (!gs.PerformMove(move)) {
+					Console.WriteLine("Invalid move!");
+					return;
+				};
 				node = node.GetChildNode(move);
 				node.Reset();
 				Console.Write(gs.PrintStateBIG());
