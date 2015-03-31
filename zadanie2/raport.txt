@@ -1,0 +1,30 @@
+Rafał Cieślak
+Zadanie z przeszukiwania i funkcji heurystycznych
+realizowane w ramach przedmiotu Sztuczna Inteligencja
+w ramach studiów na kierunku Informatyka
+na Uniwersytecie Wrocławskim
+semestr letni 2014/2015
+
+============================================
+Program automatycznie grający w "Connect4".
+============================================
+
+Użyta funkcja heurystyczna:
+ - Zlicza "wygrywające" ciągi, czyli układy czterech żetonów w jednej linii,
+każdy taki jest wart 1000 punktów (lub -1000, jeżeli są to żetony przeciwnika)
+ - Zlicza ciągi trzech żetonów w jednej linii, ale tylko takie, które na jednym
+ze swoich końców mają puste pole (tj. jest możliwość, gdzieś w przyszłości, by
+przedłużyć ten ciąg do czterech). Każdy taki jest warty 2 punkty (lub -2 jeżeli
+są to żetony przeciwnika).
+
+Głębokość przeszukiwania zależy od stanu gry, i zmienia się od 5 (na samym
+początku gry), przez 10 (po kilku pierwszych ruchach), do 12 (w zaawansowanym
+stanie rozgrywki). Dodatkowo, aby uniknąć podwajania obliczeń, przeszukując
+stany gry program wykorzystuje fragment drzewa przeszukiwań, które zbudowane
+zostało we wcześniejszym ruchu.
+
+Wyniki rozgrywek z http://www.mathsisfun.com/games/connect4.html
+
+Easy: Wygrana/Wygrana/Wygrana/Wygrana/Wygrana
+Medium: Remis/Wygrana/Wygrana/Wygrana/Wygrana
+Hard: Remis/Remis/Wygrana/Przegrana/Wygrana
