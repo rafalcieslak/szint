@@ -1,0 +1,461 @@
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://ont.cielak.org/pizza.owl>
+
+
+Annotations: 
+    rdfs:comment "Pizza ontology about pizzas and toppings."
+
+AnnotationProperty: rdfs:comment
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+ObjectProperty: <http://cielak.org/pizza.owl#hasTopping>
+
+    Domain: 
+        <http://cielak.org/pizza.owl#Pizza>
+    
+    Range: 
+        <http://cielak.org/pizza.owl#PizzaTopping>
+    
+    SubPropertyOf: 
+        <http://cielak.org/pizza.owl#hasIngredient>
+    
+    InverseOf: 
+        <http://cielak.org/pizza.owl#isToppingOf>
+    
+    
+ObjectProperty: <http://cielak.org/pizza.owl#isToppingOf>
+
+    Domain: 
+        <http://cielak.org/pizza.owl#PizzaTopping>
+    
+    Range: 
+        <http://cielak.org/pizza.owl#Pizza>
+    
+    SubPropertyOf: 
+        <http://cielak.org/pizza.owl#isIngredientOf>
+    
+    InverseOf: 
+        <http://cielak.org/pizza.owl#hasTopping>
+    
+    
+ObjectProperty: <http://cielak.org/pizza.owl#isIngredientOf>
+
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        <http://cielak.org/pizza.owl#hasIngredient>
+    
+    
+ObjectProperty: <http://cielak.org/pizza.owl#hasSpicyness>
+
+    Range: 
+        <http://cielak.org/pizza.owl#SpicynessValuePartition>
+    
+    Characteristics: 
+        Functional
+    
+    
+ObjectProperty: <http://cielak.org/pizza.owl#isBaseOf>
+
+    Domain: 
+        <http://cielak.org/pizza.owl#PizzaBase>
+    
+    Range: 
+        <http://cielak.org/pizza.owl#Pizza>
+    
+    SubPropertyOf: 
+        <http://cielak.org/pizza.owl#isIngredientOf>
+    
+    InverseOf: 
+        <http://cielak.org/pizza.owl#hasBase>
+    
+    
+ObjectProperty: <http://cielak.org/pizza.owl#hasIngredient>
+
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        <http://cielak.org/pizza.owl#isIngredientOf>
+    
+    
+ObjectProperty: <http://cielak.org/pizza.owl#hasBase>
+
+    Domain: 
+        <http://cielak.org/pizza.owl#Pizza>
+    
+    Range: 
+        <http://cielak.org/pizza.owl#PizzaBase>
+    
+    Characteristics: 
+        Functional
+    
+    SubPropertyOf: 
+        <http://cielak.org/pizza.owl#hasIngredient>
+    
+    InverseOf: 
+        <http://cielak.org/pizza.owl#isBaseOf>
+    
+    
+Class: <http://cielak.org/pizza.owl#PeperoniTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#MeatTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#VegetarianPizza>
+
+    EquivalentTo: 
+        <http://cielak.org/pizza.owl#Pizza>
+         and (<http://cielak.org/pizza.owl#hasTopping> only 
+            (<http://cielak.org/pizza.owl#CheeseTopping> or <http://cielak.org/pizza.owl#VegetableTopping>))
+    
+    
+Class: <http://cielak.org/pizza.owl#TunaTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#SeafoodTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#Pizza>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#hasBase> some <http://cielak.org/pizza.owl#PizzaBase>,
+        owl:Thing
+    
+    
+Class: <http://cielak.org/pizza.owl#MargheritaPizza>
+
+    Annotations: 
+        rdfs:comment "A pizza that only has tomato and mozzarella toppings."
+    
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#TomatoTopping>,
+        <http://cielak.org/pizza.owl#hasTopping> only 
+            (<http://cielak.org/pizza.owl#MozzarellaTopping> or <http://cielak.org/pizza.owl#TomatoTopping>),
+        <http://cielak.org/pizza.owl#NamedPizza>,
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#MozzarellaTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#PrawnTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#SeafoodTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#MeatTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PizzaTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#AmericanHotPizza>
+
+    Annotations: 
+        rdfs:comment "A pizza that only has tomato and mozzarella toppings."
+    
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#MozzarellaTopping>,
+        <http://cielak.org/pizza.owl#hasTopping> only 
+            (<http://cielak.org/pizza.owl#JalapenoPepperTopping> or <http://cielak.org/pizza.owl#MozzarellaTopping> or <http://cielak.org/pizza.owl#PeperoniTopping> or <http://cielak.org/pizza.owl#TomatoTopping>),
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#TomatoTopping>,
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#JalapenoPepperTopping>,
+        <http://cielak.org/pizza.owl#NamedPizza>,
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#PeperoniTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#CaperTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#VegetableTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#CheeseyPizza>
+
+    EquivalentTo: 
+        <http://cielak.org/pizza.owl#Pizza>
+         and (<http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#CheeseTopping>)
+    
+    
+Class: <http://cielak.org/pizza.owl#SohoPizza>
+
+    Annotations: 
+        rdfs:comment "A pizza that only has tomato and mozzarella toppings."
+    
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#ParmezanTopping>,
+        <http://cielak.org/pizza.owl#NamedPizza>,
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#TomatoTopping>,
+        <http://cielak.org/pizza.owl#hasTopping> only 
+            (<http://cielak.org/pizza.owl#MozzarellaTopping> or <http://cielak.org/pizza.owl#OliveTopping> or <http://cielak.org/pizza.owl#ParmezanTopping> or <http://cielak.org/pizza.owl#TomatoTopping>),
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#MozzarellaTopping>,
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#OliveTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#SalamiTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#MeatTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#SpicynessValuePartition>
+
+    EquivalentTo: 
+        <http://cielak.org/pizza.owl#Hot> or <http://cielak.org/pizza.owl#Medium> or <http://cielak.org/pizza.owl#Mild>
+    
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#ValuePartition>
+    
+    
+Class: <http://cielak.org/pizza.owl#PizzaBase>
+
+    
+Class: <http://cielak.org/pizza.owl#Mild>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#SpicynessValuePartition>
+    
+    
+Class: <http://cielak.org/pizza.owl#ThinAndCrispyBase>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PizzaBase>
+    
+    DisjointWith: 
+        <http://cielak.org/pizza.owl#DeepPanBase>
+    
+    
+Class: <http://cielak.org/pizza.owl#SpicyPizza>
+
+    EquivalentTo: 
+        <http://cielak.org/pizza.owl#Pizza>
+         and (<http://cielak.org/pizza.owl#hasTopping> some 
+            (<http://cielak.org/pizza.owl#PizzaTopping>
+             and (<http://cielak.org/pizza.owl#hasSpicyness> some <http://cielak.org/pizza.owl#Hot>)))
+    
+    
+Class: <http://cielak.org/pizza.owl#InterestingPizza>
+
+    EquivalentTo: 
+        <http://cielak.org/pizza.owl#Pizza>
+         and (<http://cielak.org/pizza.owl#hasTopping> min 3 owl:Thing)
+    
+    
+Class: <http://cielak.org/pizza.owl#AnchovyTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#SeafoodTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#SeafoodTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PizzaTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#NamedPizza>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#Pizza>
+    
+    
+Class: owl:Thing
+
+    
+Class: <http://cielak.org/pizza.owl#Medium>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#SpicynessValuePartition>
+    
+    
+Class: <http://cielak.org/pizza.owl#ProbeInconsistentTopping>
+
+    Annotations: 
+        rdfs:comment "Should be inconsistent."
+    
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#VegetableTopping>,
+        <http://cielak.org/pizza.owl#CheeseTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#RedPepperTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PepperTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#CheeseTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PizzaTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#Hot>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#SpicynessValuePartition>
+    
+    
+Class: <http://cielak.org/pizza.owl#VegetableTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PizzaTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#AmericanaPizza>
+
+    Annotations: 
+        rdfs:comment "A pizza that only has tomato and mozzarella toppings."
+    
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#hasTopping> only 
+            (<http://cielak.org/pizza.owl#MozzarellaTopping> or <http://cielak.org/pizza.owl#PeperoniTopping> or <http://cielak.org/pizza.owl#TomatoTopping>),
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#TomatoTopping>,
+        <http://cielak.org/pizza.owl#NamedPizza>,
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#PeperoniTopping>,
+        <http://cielak.org/pizza.owl#hasTopping> some <http://cielak.org/pizza.owl#MozzarellaTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#SpicyBeefTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#MeatTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#PepperTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#VegetableTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#OliveTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#VegetableTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#OnionTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#VegetableTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#MushroomTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#VegetableTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#GreenPepperTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PepperTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#MozzarellaTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#CheeseTopping>
+    
+    DisjointWith: 
+        <http://cielak.org/pizza.owl#ParmezanTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#ParmezanTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#CheeseTopping>
+    
+    DisjointWith: 
+        <http://cielak.org/pizza.owl#MozzarellaTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#HamTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#MeatTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#TomatoTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#VegetableTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#DeepPanBase>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#PizzaBase>
+    
+    DisjointWith: 
+        <http://cielak.org/pizza.owl#ThinAndCrispyBase>
+    
+    
+Class: <http://cielak.org/pizza.owl#JalapenoPepperTopping>
+
+    SubClassOf: 
+        <http://cielak.org/pizza.owl#hasSpicyness> some <http://cielak.org/pizza.owl#Hot>,
+        <http://cielak.org/pizza.owl#PepperTopping>
+    
+    
+Class: <http://cielak.org/pizza.owl#PizzaTopping>
+
+    
+Class: <http://cielak.org/pizza.owl#ValuePartition>
+
+    
+Class: <http://cielak.org/pizza.owl#FourCheesePizza>
+
+    EquivalentTo: 
+        <http://cielak.org/pizza.owl#Pizza>
+         and (<http://cielak.org/pizza.owl#hasTopping> exactly 4 <http://cielak.org/pizza.owl#CheeseTopping>)
+    
+    
+Individual: <http://cielak.org/pizza.owl#ExampleMargheritaPizza>
+
+    Types: 
+        <http://cielak.org/pizza.owl#MargheritaPizza>
+    
+    
+Individual: <http://cielak.org/pizza.owl#ExampleTomatoTopping>
+
+    Types: 
+        <http://cielak.org/pizza.owl#TomatoTopping>
+    
+    
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#CheeseTopping>, <http://cielak.org/pizza.owl#MeatTopping>, <http://cielak.org/pizza.owl#SeafoodTopping>, <http://cielak.org/pizza.owl#VegetableTopping>
+
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#Hot>, <http://cielak.org/pizza.owl#Medium>, <http://cielak.org/pizza.owl#Mild>
+
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#AnchovyTopping>, <http://cielak.org/pizza.owl#PrawnTopping>, <http://cielak.org/pizza.owl#TunaTopping>
+
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#GreenPepperTopping>, <http://cielak.org/pizza.owl#JalapenoPepperTopping>, <http://cielak.org/pizza.owl#RedPepperTopping>
+
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#Pizza>, <http://cielak.org/pizza.owl#PizzaBase>, <http://cielak.org/pizza.owl#PizzaTopping>
+
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#HamTopping>, <http://cielak.org/pizza.owl#PeperoniTopping>, <http://cielak.org/pizza.owl#SalamiTopping>, <http://cielak.org/pizza.owl#SpicyBeefTopping>
+
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#CaperTopping>, <http://cielak.org/pizza.owl#MushroomTopping>, <http://cielak.org/pizza.owl#OliveTopping>, <http://cielak.org/pizza.owl#OnionTopping>, <http://cielak.org/pizza.owl#PepperTopping>, <http://cielak.org/pizza.owl#TomatoTopping>
+
+DisjointClasses: 
+    <http://cielak.org/pizza.owl#AmericanHotPizza>, <http://cielak.org/pizza.owl#AmericanaPizza>, <http://cielak.org/pizza.owl#MargheritaPizza>, <http://cielak.org/pizza.owl#SohoPizza>
+

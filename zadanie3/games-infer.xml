@@ -1,0 +1,937 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ont.cielak.org/games-infer.xml"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://ont.cielak.org/games-infer.xml">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom1990s"/>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2010s"/>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre4X"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreActionRPG"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreActionRPG"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreFPS"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreMOBA"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreRTS"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreRoguelike"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreSports"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreStrategy"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreTBS"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformPlayStation"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatrformPC"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#IndieGame"/>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#IndieGameDeveloper"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameDeveloper"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://ont.cielak.org/games.owl#MainstreamGameDeveloper"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameDeveloper"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom1990s"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom1990s"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2010s"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2010s"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://ont.cielak.org/games.owl#IndieGameDeveloper"/>
+        <Class IRI="http://ont.cielak.org/games.owl#MainstreamGameDeveloper"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#BioWare"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#BioWare"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2010s"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreActionRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreActionRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreActionRPG"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreActionRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreActionRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreFPS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreFPS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreFPS"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreFPS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreMOBA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreMOBA"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreMOBA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreStrategy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreMOBA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatrformPC"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatrformPC"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformPlayStation"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformPlayStation"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformSteamOS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatrformPC"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformSteamOS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatform"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXboxOne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXboxOne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2010s"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#Game"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameFrom2000s"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#IndieGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Mojang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#IndieGameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Mojang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Rockstar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Rockstar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Ubisoft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Ubisoft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#GameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Valve"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://ont.cielak.org/games.owl#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Valve"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#BioWare"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#BioWare"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreMOBA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformSteamOS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Valve"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS4"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformSteamOS"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformSteamOS"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXboxOne"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAction"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Rockstar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Rockstar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreFPS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformSteamOS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Valve"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#BioWare"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectPredecessorOf"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectSequelTo"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreRPG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#BioWare"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformPS4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformXboxOne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Mojang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Mojang"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Rockstar"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Rockstar"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Valve"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Valve"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#DefenseOfTheAncients2"/>
+        <Literal datatypeIRI="&xsd;integer">2013</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto3"/>
+        <Literal datatypeIRI="&xsd;integer">2001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#GrandTheftAuto4"/>
+        <Literal datatypeIRI="&xsd;integer">2008</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#HalfLife2"/>
+        <Literal datatypeIRI="&xsd;integer">2005</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect"/>
+        <Literal datatypeIRI="&xsd;integer">2008</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#MassEffect2"/>
+        <Literal datatypeIRI="&xsd;integer">2010</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+        <NamedIndividual IRI="http://ont.cielak.org/games.owl#Minecraft"/>
+        <Literal datatypeIRI="&xsd;integer">2009</Literal>
+    </DataPropertyAssertion>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isOfGenre"/>
+    </EquivalentObjectProperties>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPrequelOf"/>
+    </EquivalentObjectProperties>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSpinoffOf"/>
+    </EquivalentObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectPredecessorOf"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectPredecessorOf"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectSequelTo"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectSequelTo"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPrequelOf"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPrequelOf"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSpinoffOf"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSpinoffOf"/>
+        <ObjectInverseOf>
+            <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+        </ObjectInverseOf>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectSequelTo"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isDirectPredecessorOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsOn"/>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#runsGame"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#wasDevelopedBy"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#developed"/>
+    </InverseFunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isPredecessorOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://ont.cielak.org/games.owl#isSequelTo"/>
+    </TransitiveObjectProperty>
+    <EquivalentDataProperties>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+    </EquivalentDataProperties>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://ont.cielak.org/games.owl#ReleaseYear"/>
+    </FunctionalDataProperty>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

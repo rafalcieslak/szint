@@ -1,0 +1,1339 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ont.cielak.org/games.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://ont.cielak.org/games.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#CommunityDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FPSGame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Game"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameFrom1990s"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameFrom2000s"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameFrom2010s"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenre4X"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreAdventure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreFPS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreMOBA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreRPG"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreRTS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreRoguelike"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreSports"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreStrategy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameGenreTBS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GameplayGameFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GamingPlatform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GamingPlatformMac"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GamingPlatformPlayStation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GamingPlatformXbox"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GamingPlatrformPC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GraphicalGameFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndieGame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndieGameDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LinuxGame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MainstreamGameDeveloper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlotGameFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SciFiGame"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#appearsIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#developed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDirectPredecessorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOfGenre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPredecessorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPrequelOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSequelTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSpinoffOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#runsGame"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#runsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ReleaseYear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_BioWare"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_Mojang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_OpenTTDCommunity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_Rockstar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_Ubisoft"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_Valve"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Developer_idSoftware"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameGenreAction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameGenreActionRPG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameGenreAdventure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameGenreFPS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameGenreMOBA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameGenreRPG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameGenreStrategyEconomic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_Doom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_Doom2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameplayGameFeatureLinear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameplayGameFeatureNonlinear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GameplayGameFeatureOpenWorld"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformPS4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformSteamOS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GamingPlatformXboxOne"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GraphicalGameFeatureIsometric"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PlotGameFeatureHeist"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PlotGameFeatureSciFi"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#FPSGame"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isOfGenre"/>
+                <Class IRI="#GameGenreFPS"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GameDeveloper"/>
+        <ObjectUnionOf>
+            <Class IRI="#CommunityDeveloper"/>
+            <Class IRI="#IndieGameDeveloper"/>
+            <Class IRI="#MainstreamGameDeveloper"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GameFrom1990s"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#ReleaseYear"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;minInclusive">
+                        <Literal datatypeIRI="&xsd;integer">1990</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#ReleaseYear"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;maxExclusive">
+                        <Literal datatypeIRI="&xsd;integer">2000</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GameFrom2000s"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#ReleaseYear"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;minInclusive">
+                        <Literal datatypeIRI="&xsd;integer">2000</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#ReleaseYear"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;maxExclusive">
+                        <Literal datatypeIRI="&xsd;integer">2010</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GameFrom2010s"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#ReleaseYear"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;minInclusive">
+                        <Literal datatypeIRI="&xsd;integer">2010</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#ReleaseYear"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:integer"/>
+                    <FacetRestriction facet="&xsd;maxExclusive">
+                        <Literal datatypeIRI="&xsd;integer">2020</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GamingPlatform"/>
+        <ObjectUnionOf>
+            <Class IRI="#GamingPlatformMac"/>
+            <Class IRI="#GamingPlatformPlayStation"/>
+            <Class IRI="#GamingPlatformXbox"/>
+            <Class IRI="#GamingPlatrformPC"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#IndieGame"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#wasDevelopedBy"/>
+                <Class IRI="#IndieGameDeveloper"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LinuxGame"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#runsOn"/>
+                <NamedIndividual IRI="#GamingPlatformLinux"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SciFiGame"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Game"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasFeature"/>
+                <NamedIndividual IRI="#PlotGameFeatureSciFi"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#CommunityDeveloper"/>
+        <Class IRI="#GameDeveloper"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Game"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#runsOn"/>
+            <Class IRI="#GamingPlatform"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenre4X"/>
+        <Class IRI="#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreAction"/>
+        <Class IRI="#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreAdventure"/>
+        <Class IRI="#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreFPS"/>
+        <Class IRI="#GameGenreAction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreMOBA"/>
+        <Class IRI="#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreRPG"/>
+        <Class IRI="#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreRTS"/>
+        <Class IRI="#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreRoguelike"/>
+        <Class IRI="#GameGenreRPG"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreSports"/>
+        <Class IRI="#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreStrategy"/>
+        <Class IRI="#GameGenre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameGenreTBS"/>
+        <Class IRI="#GameGenreStrategy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GameplayGameFeature"/>
+        <Class IRI="#GameFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GamingPlatformMac"/>
+        <Class IRI="#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GamingPlatformPlayStation"/>
+        <Class IRI="#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GamingPlatformXbox"/>
+        <Class IRI="#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GamingPlatrformPC"/>
+        <Class IRI="#GamingPlatform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GraphicalGameFeature"/>
+        <Class IRI="#GameFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndieGameDeveloper"/>
+        <Class IRI="#GameDeveloper"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MainstreamGameDeveloper"/>
+        <Class IRI="#GameDeveloper"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlotGameFeature"/>
+        <Class IRI="#GameFeature"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#CommunityDeveloper"/>
+        <Class IRI="#IndieGameDeveloper"/>
+        <Class IRI="#MainstreamGameDeveloper"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#GameplayGameFeature"/>
+        <Class IRI="#GraphicalGameFeature"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#GameplayGameFeature"/>
+        <Class IRI="#GraphicalGameFeature"/>
+        <Class IRI="#PlotGameFeature"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IndieGameDeveloper"/>
+        <Class IRI="#MainstreamGameDeveloper"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="#Developer_BioWare"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#IndieGameDeveloper"/>
+        <NamedIndividual IRI="#Developer_Mojang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CommunityDeveloper"/>
+        <NamedIndividual IRI="#Developer_OpenTTDCommunity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="#Developer_Rockstar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="#Developer_Ubisoft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="#Developer_Valve"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MainstreamGameDeveloper"/>
+        <NamedIndividual IRI="#Developer_idSoftware"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreAction"/>
+        <NamedIndividual IRI="#GameGenreAction"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreAction"/>
+        <NamedIndividual IRI="#GameGenreActionRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreRPG"/>
+        <NamedIndividual IRI="#GameGenreActionRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreAdventure"/>
+        <NamedIndividual IRI="#GameGenreAdventure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreFPS"/>
+        <NamedIndividual IRI="#GameGenreFPS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreMOBA"/>
+        <NamedIndividual IRI="#GameGenreMOBA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreRPG"/>
+        <NamedIndividual IRI="#GameGenreRPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameGenreStrategy"/>
+        <NamedIndividual IRI="#GameGenreStrategyEconomic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_Doom2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Game"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameplayGameFeature"/>
+        <NamedIndividual IRI="#GameplayGameFeatureLinear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameplayGameFeature"/>
+        <NamedIndividual IRI="#GameplayGameFeatureNonlinear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GameplayGameFeature"/>
+        <NamedIndividual IRI="#GameplayGameFeatureOpenWorld"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatrformPC"/>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatrformPC"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatformMac"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatformPlayStation"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatformPlayStation"/>
+        <NamedIndividual IRI="#GamingPlatformPS4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatrformPC"/>
+        <NamedIndividual IRI="#GamingPlatformSteamOS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatformXbox"/>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GamingPlatformXbox"/>
+        <NamedIndividual IRI="#GamingPlatformXboxOne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GraphicalGameFeature"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GraphicalGameFeature"/>
+        <NamedIndividual IRI="#GraphicalGameFeatureIsometric"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlotGameFeature"/>
+        <NamedIndividual IRI="#PlotGameFeatureHeist"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PlotGameFeature"/>
+        <NamedIndividual IRI="#PlotGameFeatureSciFi"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#developed"/>
+        <NamedIndividual IRI="#Developer_Valve"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="#GameGenreMOBA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="#GamingPlatformSteamOS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+        <NamedIndividual IRI="#GameGenreFPS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+        <NamedIndividual IRI="#Developer_idSoftware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+        <NamedIndividual IRI="#Game_Doom2"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_Doom2"/>
+        <NamedIndividual IRI="#GameGenreFPS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Doom2"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Doom2"/>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_Doom2"/>
+        <NamedIndividual IRI="#Developer_idSoftware"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#GameplayGameFeatureOpenWorld"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#GameGenreAction"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <NamedIndividual IRI="#Developer_Rockstar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <NamedIndividual IRI="#GameplayGameFeatureOpenWorld"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isSequelTo"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <NamedIndividual IRI="#Developer_Rockstar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GameGenreFPS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GamingPlatformSteamOS"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <NamedIndividual IRI="#Developer_Valve"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GameplayGameFeatureOpenWorld"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#PlotGameFeatureSciFi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GameGenreRPG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <NamedIndividual IRI="#Developer_BioWare"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GameplayGameFeatureOpenWorld"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#PlotGameFeatureSciFi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GameGenreRPG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <NamedIndividual IRI="#Developer_BioWare"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#PlotGameFeatureSciFi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#GameGenreActionRPG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_MassEffect3"/>
+        <NamedIndividual IRI="#Developer_BioWare"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GameplayGameFeatureOpenWorld"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GraphicalGameFeature3D"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GameGenreAdventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GamingPlatformPS3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GamingPlatformPS4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GamingPlatformXbox360"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GamingPlatformXboxOne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <NamedIndividual IRI="#Developer_Mojang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+        <NamedIndividual IRI="#GraphicalGameFeatureIsometric"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+        <NamedIndividual IRI="#GameGenreStrategyEconomic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+        <NamedIndividual IRI="#GamingPlatformLinux"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+        <NamedIndividual IRI="#GamingPlatformMSWindows"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#runsOn"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+        <NamedIndividual IRI="#GamingPlatformMac"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+        <NamedIndividual IRI="#Developer_OpenTTDCommunity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#appearsIn"/>
+        <NamedIndividual IRI="#PlotGameFeatureHeist"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#appearsIn"/>
+        <NamedIndividual IRI="#PlotGameFeatureHeist"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#appearsIn"/>
+        <NamedIndividual IRI="#PlotGameFeatureSciFi"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_DefenseOfTheAncients2"/>
+        <Literal datatypeIRI="&xsd;integer">2013</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_Doom"/>
+        <Literal datatypeIRI="&xsd;integer">1993</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_Doom2"/>
+        <Literal datatypeIRI="&xsd;integer">1994</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto3"/>
+        <Literal datatypeIRI="&xsd;integer">2001</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_GrandTheftAuto4"/>
+        <Literal datatypeIRI="&xsd;integer">2008</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_HalfLife2"/>
+        <Literal datatypeIRI="&xsd;integer">2005</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_MassEffect"/>
+        <Literal datatypeIRI="&xsd;integer">2008</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_MassEffect2"/>
+        <Literal datatypeIRI="&xsd;integer">2010</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_Minecraft"/>
+        <Literal datatypeIRI="&xsd;integer">2009</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ReleaseYear"/>
+        <NamedIndividual IRI="#Game_OpenTTD"/>
+        <Literal datatypeIRI="&xsd;integer">2004</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isDirectPredecessorOf"/>
+        <ObjectProperty IRI="#isPredecessorOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+        <ObjectProperty IRI="#isSequelTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPrequelOf"/>
+        <ObjectProperty IRI="#isSequelTo"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSpinoffOf"/>
+        <ObjectProperty IRI="#isSequelTo"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFeature"/>
+        <ObjectProperty IRI="#appearsIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <ObjectProperty IRI="#developed"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+        <ObjectProperty IRI="#isDirectPredecessorOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPredecessorOf"/>
+        <ObjectProperty IRI="#isSequelTo"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#runsGame"/>
+        <ObjectProperty IRI="#runsOn"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#developed"/>
+    </InverseFunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isPredecessorOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isSequelTo"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#appearsIn"/>
+        <Class IRI="#GameFeature"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#developed"/>
+        <Class IRI="#GameDeveloper"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFeature"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDirectPredecessorOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPrequelOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSequelTo"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSpinoffOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#runsGame"/>
+        <Class IRI="#GamingPlatform"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#runsOn"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#appearsIn"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#developed"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFeature"/>
+        <Class IRI="#GameFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDirectPredecessorOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDirectSequelTo"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOfGenre"/>
+        <Class IRI="#GameGenre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPrequelOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSequelTo"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSpinoffOf"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#runsGame"/>
+        <Class IRI="#Game"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#runsOn"/>
+        <Class IRI="#GamingPlatform"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wasDevelopedBy"/>
+        <Class IRI="#GameDeveloper"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#ReleaseYear"/>
+    </FunctionalDataProperty>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

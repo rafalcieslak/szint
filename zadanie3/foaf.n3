@@ -1,0 +1,13 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+[]
+  a foaf:Person ;
+  foaf:name "Rafał Cieślak" ;
+  foaf:gender "Female" ;
+  foaf:title "Mr" ;
+  foaf:givenname "Rafał" ;
+  foaf:family_name "Cieślak" ;
+  foaf:homepage <http://cielak.org> ;
+  foaf:weblog <http://rafalcieslak.wordpress.org/> ;
+  foaf:mbox "rafalcieslak256@ubuntu.com" ;
+  foaf:nick "cielak" .

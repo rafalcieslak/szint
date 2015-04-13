@@ -1,0 +1,14 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/">
+ <foaf:Person>
+   <foaf:name>Rafał Cieślak</foaf:name>
+   <foaf:gender>Female</foaf:gender>
+   <foaf:title>Mr</foaf:title>
+   <foaf:givenname>Rafał</foaf:givenname>
+   <foaf:family_name>Cieślak</foaf:family_name>
+   <foaf:homepage rdf:resource="http://cielak.org"/>
+   <foaf:weblog rdf:resource="http://rafalcieslak.wordpress.org/"/>
+   <foaf:mbox>rafalcieslak256@ubuntu.com</foaf:mbox>
+   <foaf:nick>cielak</foaf:nick>
+ </foaf:Person>
+</rdf:RDF>
