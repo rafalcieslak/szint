@@ -2,7 +2,7 @@
          xmlns:foaf="http://xmlns.com/foaf/0.1/">
  <foaf:Person>
    <foaf:name>Rafał Cieślak</foaf:name>
-   <foaf:gender>Female</foaf:gender>
+   <foaf:gender>Male</foaf:gender>
    <foaf:title>Mr</foaf:title>
    <foaf:givenname>Rafał</foaf:givenname>
    <foaf:family_name>Cieślak</foaf:family_name>

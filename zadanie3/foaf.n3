@@ -3,7 +3,7 @@
 []
   a foaf:Person ;
   foaf:name "Rafał Cieślak" ;
-  foaf:gender "Female" ;
+  foaf:gender "Male" ;
   foaf:title "Mr" ;
   foaf:givenname "Rafał" ;
   foaf:family_name "Cieślak" ;
