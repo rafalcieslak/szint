@@ -21,6 +21,10 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An ontology describing video games, their developers, gaming platforms, game genres and features.</Literal>
+    </Annotation>
     <Declaration>
         <Class IRI="#CommunityDeveloper"/>
     </Declaration>
@@ -1201,8 +1205,8 @@
         <ObjectProperty IRI="#isSequelTo"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasFeature"/>
         <ObjectProperty IRI="#appearsIn"/>
+        <ObjectProperty IRI="#hasFeature"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#wasDevelopedBy"/>

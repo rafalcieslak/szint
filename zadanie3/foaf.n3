@@ -1,12 +1,28 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ns0: <http://www.w3.org/2000/01/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf2: <http://ont.cielak.org/foaf.rdf> .
+
+[]
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "fieldsOfStudy" ;
+  rdfs:comment "Fields this person studies." ;
+  rdfs:domain foaf:Person ;
+  rdfs:range rdfs:Literal .
 
 []
   a foaf:Person ;
+  rdfs:label "Rafał Cieślak" ;
   foaf:name "Rafał Cieślak" ;
-  foaf:gender "Female" ;
+  foaf:gender "Male" ;
   foaf:title "Mr" ;
   foaf:givenname "Rafał" ;
   foaf:family_name "Cieślak" ;
+  foaf:based_near "Wrocław" ;
+  foaf2:fieldsOfStudy "Math, Computer Science" ;
+  foaf:birthday "08-29" ;
   foaf:homepage <http://cielak.org> ;
   foaf:weblog <http://rafalcieslak.wordpress.org/> ;
   foaf:mbox "rafalcieslak256@ubuntu.com" ;

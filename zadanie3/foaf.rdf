@@ -1,14 +1,28 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:foaf="http://xmlns.com/foaf/0.1/">
- <foaf:Person>
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:foaf2="http://ont.cielak.org/foaf.rdf"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema">
+
+<rdf:Property rdfs:label="fieldsOfStudy" rdfs:comment="Fields this person studies.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+</rdf:Property>
+
+ <foaf:Person rdfs:label="Rafał Cieślak">
    <foaf:name>Rafał Cieślak</foaf:name>
-   <foaf:gender>Female</foaf:gender>
+   <foaf:gender>Male</foaf:gender>
    <foaf:title>Mr</foaf:title>
    <foaf:givenname>Rafał</foaf:givenname>
    <foaf:family_name>Cieślak</foaf:family_name>
+   <foaf:based_near>Wrocław</foaf:based_near>
+   <foaf2:fieldsOfStudy>Math, Computer Science</foaf2:fieldsOfStudy>
+   <foaf:birthday>08-29</foaf:birthday>
    <foaf:homepage rdf:resource="http://cielak.org"/>
    <foaf:weblog rdf:resource="http://rafalcieslak.wordpress.org/"/>
    <foaf:mbox>rafalcieslak256@ubuntu.com</foaf:mbox>
    <foaf:nick>cielak</foaf:nick>
  </foaf:Person>
+
+
 </rdf:RDF>

@@ -1,0 +1,110 @@
+Rafał Cieślak
+Ćwiczenie z reprezentacji wiedzy za pomocą ontologii
+realizowane w ramach przedmiotu Sztuczna Inteligencja
+w ramach studiów na kierunku Informatyka
+na Uniwersytecie Wrocławskim
+semestr letni 2014/2015
+
+====================================================
+Ćwiczenie z reprezentacji wiedzy za pomocą ontologii
+====================================================
+
+-- Zadanie 1 "przygotowanie".
+  Wykonane - brak komentarzy.
+
+-- Zadanie 2 "pizza tutorial".
+  (a) Brak komentarzy.
+  (b) Tutorial udało mi się wykonać w całości.
+  (c)
+		 1. Oto przykładowe zapytania DLQuery:
+
+				Zapytanie:
+					hasSpicyness some Hot
+				Podklasy:
+					JalapenoPepperTopping
+
+				Zapytanie:
+					hasIngredient some (PizzaTopping and hasSpicyness some Hot)
+				Bezpośrednie podklasy:
+					SpicyPizza
+				Podklasy
+					SpicyPizza
+					AmericanHotPizza
+
+				Zapytanie:
+					hasTopping some CheeseTopping
+				Klasy równoważne:
+					CheeseyPizza
+				Instancje:
+					ExampleMargheritaPizza
+
+				Zapytanie:
+					Pizza and (hasTopping only PizzaTopping)
+				Klasy równoważne:
+					Pizza
+				Instancje:
+					ExampleMargheritaPizza
+
+		 2. Użyty warunek:
+				 hasBase exactly 1 PizzaBase
+			  dodany jako "SubClassOf" klasy Pizza.
+
+		 3. Użyty warunek:
+				 Pizza and hasTopping only (PizzaTopping and hasSpicyness only Mild)
+				Aby w ogóle pytanie o ostrość Margherity miało sens, musiałem dodać do
+        ontologii informacje o ostrości dodatków: mozzarelli i pomidorów. Po
+		    tej poprawce, taki warunek kwalifikuje Margheritę jako pizzaę łagodną.
+
+	(d) Zapytania przećwiczyłem. Ponieważ ta ontologia posiada bardzo niewiele
+      instancji, możliwości tworzenia specjalnie ciekawych zapytań SPARQL są
+      nieco ograniczone.
+
+-- Zadanie 3 "FOAF".
+  Utworzone przeze mnie ontologie zawierające informacje wyłącznie o mnie
+  załączam w plikach foaf.rdf oraz foaf.n3. Są też dostępne pod URL:
+    http://ont.cielak.org/foaf.rdf
+  oraz
+    http://ont.cielak.org/foaf.n3
+  Pomyślnie definiowałem jedną dodatkową własność.
+  Plik RDF jest poprawny według zapropowanowanego validatora. Pliku N3 nie
+  mogę sprawdzić za jego pomocą, ponieważ jest to validator RDF.
+  Nie byłem w stanie użyć żadnego publicznego endpointu SPARQL. Chociaż jest
+  duży wybór dostępnych, każdy który sprawdziłem nie pozwala na importowanie
+  własnych ontologii do zapytań, ze względów bezpieczeństwa, zatem nie jestem
+  w stanie testować zapytań odnośnie mojej ontologii.
+
+-- Zadanie 4 "Budowa ontologii dla wybranej dziedziny".
+  Tak jak wyjaśniałem prezentując zadanie na zajęciach, uznałem, że tworząc
+  ontologię dotyczącą tej samej dziedziny, którą wybrałem we wcześniejszym
+  zadaniu, bardzo ograniczę możliwości jej rozbudowy. Zatem zmieniłem temat,
+  którego ontologię przygotowałem, i zająłem się dziedziną gier wideo.
+  Moja ontologia hierarchicznie uporządkowuje gry, twórców gier, gatunki gier,
+  cechy występujące w grach, oraz platformy, na którym można grać.
+  Zestawy zależności łączą instancje gier z jej cechami (twórca, platformy,
+  gatunki, cechy), a także gry same ze sobą (sequele, spinoffy).
+  Niestety, nie znalazłem ontolgii dziedzinowych, które mógłbym zastosować w tym
+  zadaniu.
+  Moja ontologia nie posiada wiele instancji, utworzyłem ich tylko wystarczająco
+  wiele, by ukazać schemat hierarchii.
+
+Przykładowe zapytanie DL:
+  runsOn value GamingPlatformLinux and hasFeature value GraphicalGameFeature3D and wasDevelopedBy some MainstreamGameDeveloper
+Odpowiada ono klasie gier, które "chodzą na linuksie", a do tego mają
+trójwymiarową grafikę i pochodzą od mainstreamowego developera. Innymi słowy,
+są to linuksowe AAA.
+
+Przykładowe zapytenie SPARQL:
+  PREFIX gam: <http://ont.cielak.org/games.owl#>
+  SELECT ?game1 ?game2
+	  WHERE {{ ?game2 gam:isDirectSequelTo ?game1} UNION { ?game2 gam:isSequelTo ?game1}  UNION { ?game1 gam:isPredecessorOf ?game2} UNION { ?game1 gam:isDirectPredecessorOf ?game2}}
+Ponieważ zapytania SPARQL ignorują własności, które wywnioskował reasoner,
+trzeba się sporo natrudzić by stworzyć nawet proste zapytanie. Ten przykład
+zwraca wszystkie pary tytułów gier, które są kontynuacjami (sequelami).
+
+Ze względu na mnogość relacji pomiędzy obiektami w mojej ontologii, powstały
+graf jest dość skomplikowany. Postarałem się go możliwie uporządkować, do
+wygodnego przeglądania. Niestety, powstałe grafiki okazały się zbyt duże,
+bym mógł je wysłać przez KNO :-( W zamian, udostępniam te pliki pod adresami:
+	http://ont.cielak.org/graf.png
+	http://ont.cielak.org/graf2.png
+	http://ont.cielak.org/graf3.png
