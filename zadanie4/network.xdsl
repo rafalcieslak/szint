@@ -180,7 +180,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>433 48 497 88</position>
+				<position>432 55 496 95</position>
 			</node>
 			<node id="Alcohol">
 				<name>Alcohol</name>

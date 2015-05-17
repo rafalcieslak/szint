@@ -1,0 +1,142 @@
+Rafał Cieślak
+Ćwiczenie z sieci bayesowskich
+realizowane w ramach przedmiotu Sztuczna Inteligencja
+w ramach studiów na kierunku Informatyka
+na Uniwersytecie Wrocławskim
+semestr letni 2014/2015
+
+==============================
+Ćwiczenie z sieci bayesowskich
+==============================
+
+1. Temat/dane
+	Przygotowana przeze mnie sieć powstała na podstawie danych znalezionych w
+serwisie [1], a dokładniej w oparciu na zestawy danych dostępne na stronie [2].
+Są to dane pochodzace z ankiet przeprowadzonych w dwu portugalskich szkołach
+średnich skorelowane z wynikami w nauce ankietowanych studentów.
+	Pytania zadawane w ankietach próbują nakreślić obraz ucznia, jego sytuację
+rodzinną, oraz ustalić jakie czynniki wpływają na wyniki w nauce. Zebrane
+rekordy zawierają odpowiedzi na około 30 pytań oraz trzy oceny (semestralne i
+końcową) uzyskane przez ucznia.
+	Spośród tych danych wybrałem tylko kilka czynników, których wpływ na oceny
+badam, każdą z 30 odpowiedzi studenta należałoby traktować jako osobną zmienną
+losową, co utworzyłoby bardzo dużą sieć, ograniczyłem się zatem do pewnego
+podzbioru tych zmiennych, dobranego tak, by oparta na nim sieć była możliwie
+ciekawa i zawierała dużo wzajemnych zależności.
+	Zestawy danych, z których korzystałem, zostały sporządzone przez Paulo
+Corteza [3] i zawierają kilkaset pozycji, więc są wystarczająco duże by obliczać
+rzeczywiste prawdopodobieństwa warunkowe.
+	Przed wykorzystaniem danych do stworzenia sieci poddałem je drobnej obróbce.
+Niektóre z odpowiedzi pogrupowałem w jedną zbiorową (np. tygodniowe spożycie
+alkoholu oraz dzienne spożycie alkoholu zebrałem w jedną zmienną o wartości
+uśredniającej te dwie zmienne). Pewne zmienne o wartości liczbowej
+preztłumaczyłem na dyskretne wyróżniając kilka przedziałów wartości (np. ocenę
+końcową - w portugali jest to liczba 0-20 - pogrupowałem na 5 poziomów:
+niezaliczająca, zaliczająca, dobra, bardzo dobra, wzorowa). Takie uproszczenia
+wiążą się z pewną utratą informacji, ale pozwalają skonstruować pożyteczniejszą
+w praktyce sieć.
+	Podzbiór zmiennych, które wybrałem do rozważań, to:
+	- G1, G2, G3 - oceny (z języka ortugalskiego): za pierwszy semestr, za drugi,
+oraz całoroczna
+	- Age - wiek ucznia (15,16,17,18,19-22)
+	- Sex - płeć (M/F)
+	- Alcohol - wypadkowa spożycia alkoholu (none, little, lots)
+	- Absences - poziom liczby nieobecności (none, few, many, lots)
+	- Failures - liczba niezaliczonych semestrów (0-3)
+	- RomanticRelationship - posiadanie partnera (yes/no)
+	- StudyTime - czas, który uczeń tygodniowo poświęca na naukę (1-4)
+	- Freetime - czas w ciągu dnia, który uczeń uważa za wolny (1-5)
+
+2. Wstępna analiza - automatyczna budowa sieci
+	Za pomocą GeNIe nie udało mi się automatycznie zbudować jakkolwiek ciekawej
+sieci z tak przygotowanego zestawu danych. W zależności od wyboru algorytmu
+program generował sieci bardzo rzadkie, które albo posiadały łacznie tylko kilka
+strzałek, lub miały topologię gwiazdy. Z takich sieci nie udało mi się wyciągnąć
+żadnych ciekawych spostrzeżeń ani wniosków, skupiłem się zatem na ręcznym
+zaprojektowaniu siatki zależności.
+
+3. Ręczna budowa sieci bayesowskiej
+	Ręcznie zbudowana sieć okazała się dużo przydatniejsza. Budowę oparłem po
+części na przesłankach (zgadywałem na przykład, że wysokie spożycie alkoholu ma
+związek z tendencjami do nieobecności), a po części na wynikach obliczeń
+prawdopodobieństwa warunkowego (przy pomocy arkusza kalkulacyjnego Gnumeric).
+Oczywiście, po zasugerowaniu programowi kształtu sieci, jaki bym oczekiwał,
+prawdopodobieństa wyliczane były automatycznie. Czasami okazywało się, że moja
+przesłanka była błędna, połączenia, które okazały się nie mieć istotnego wpływu
+na drugą zmienną starannie usunąłem z mojej sieci.
+
+4. Użyte narzędzie
+	Do konstrukcji i badania sieci bayesowskiej użyłem wyłącznie programu GeNIe.
+  Do pre-procesingu zestawu danych użyłem arkusza kalkulacyjnego Gnumeric.
+
+5. Załączony widok sieci
+  Utrzymuję raport w formacie tekstowym. Schemat sieci umieściłem się pod
+adresem [4].
+
+6. Weryfikacja poprawności działania sieci
+	Ręczne testowanie bezpośrednich korelacji pomiędzy zmiennymi w większości
+przypadków zgadało się z intuicyjnymi oczekiwaniami, a pozostałych przypadkach
+związki między zmiennymi dało się wytłumaczyć naturą sieci lub użytych danych.
+Wykonując liczne zapytania wobec mojej sieci nie znalazłem żadnych sprzeczności
+(choć znalazłem pewne nieco askakujące wyniki).
+
+7. Przykładowe zapytanie probabilistyczne w raporcie
+  a) Jaką ocenę końcoworoczną otrzyma dziewczyna, która spożywa dużo alkoholu i
+poświęca bardzo dużo czasu na naukę?
+	- Poor - 11%
+  - Sufficient - 37%
+	- Good - 18%
+	- Very good - 20%
+	- Excellent - 15%
+	b) Ile alkoholu spożywa osoba, o której wiemy że ma mnóstwo czasu wolnego i
+mnóstwo nieobecności, a nie ma partnera?
+	- none - 18%
+	- little - 45%
+	- lots - 36%
+
+8. Opracowanie decyzji i użyteczności
+	Wymyśliłem agenta podejmującego decyzję przy doradzaniu studentowi, czy
+powinien iść na zajęcia, tj. decyzją jest jedna z możliwych częstości
+opuszczania zajęć.
+	Funkcja użyteczności zależy nie tylko od ocen końcowych, ale też od czasu
+wolnego. Uznałem, że uczniom zależy nie tylko na dobrych wynikach w nauce,
+miło byłoby też mieć trochę czasu dla siebie. Wartości funkcji dobrałem tak,
+by każda ocena niezaliczająca bardzo zaniżała wartość użyteczności, a nie
+zdanie do następnej klasy było uznawane za największą tragedię jaka może spotkać
+ucznia. Dodatkowo znormalizowałem wartości tak, by dużo czasu wolnego było warte
+mniej więcej tyle samo co same wzorowe wyniki w ocenach, a zupełny brak czasu
+wolnego był nie tak zły jak jedynka w dzienniku.
+
+9. Przykładowe obliczenie decyzji
+	Oto wartości funkcji użyteczności w zależności od podjętej decyzji o
+nieobecnościach dla ucznia - mężczyzny w wieku 19-22 lat, który już trzykrotnie
+oblał klasę.
+	none - 18.9
+	few - -93.7
+	many - 116.4
+	lots - 57.7
+	(no decision) - 4.2
+Wyraźnie bardzo opłaca się poopuszczać nieco zajęć. Na pewno wyjdzie to na plus,
+niż gdyby agent nie udzielił takiemu uczniowi porady, natomiast opóścić za mało
+lekcji wyraźnie jest zgubne.
+
+10. Obliczenie wartości dokładnej informacji (VPI)
+	Dla tego samego agenta, wartość informacji o płci ucznia to 4.04. Natomiast
+informacja o tym jak dużo się uczy (jest największa spośród wszystkich
+zmiennych w mojej sieci) i wynosi 32.6.
+	Zgadza się to z oczekiwaniami, aby agent mógł słusznie doradzić uczniowi, czy
+może sobie pozwolić na wolne od szkoły, warto, by zadał kontr-pytanie: "A czy
+ty się pracowicie uczysz?".
+
+
+
+
+
+
+  [1] http://archive.ics.uci.edu/ml/
+  [2] http://archive.ics.uci.edu/ml/datasets/Student+Performance
+  [3] P. Cortez and A. Silva. Using Data Mining to Predict Secondary School
+Student Performance. In A. Brito and J. Teixeira Eds., Proceedings of 5th FUtur
+ BUsiness TEChnology Conference (FUBUTEC 2008) pp. 5-12, Porto, Portugal, April,
+2008, EUROSIS, ISBN 978-9077381-39-7. [www3.dsi.uminho.pt/pcortez/student.pdf]
+  [4] http://i.imgur.com/LOWrYbX.png
