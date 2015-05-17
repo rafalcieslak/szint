@@ -1,0 +1,10 @@
+4 4   wymiary
+0.1   prawdopodobieństwo dygresji (*2)
+-1.0   nagroda za ruch
+-20.0  nagroda za stan specjalny
+100.0   nagroda za stan terminalny
+0.8  przecena
+....
+....
+..S.
+I.XT

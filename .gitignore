@@ -2,3 +2,8 @@ zadanie2/bin
 *.userprefs
 *~
 *.zip
+zadanie5/bin
+zadanie5/obj
+zadanie5/log.txt
+zadanie5/gnuplot.txt
+zadanie5/plot.png
