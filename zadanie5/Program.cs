@@ -16,13 +16,13 @@ namespace learning
 			int n = Int32.Parse (nm [0]);
 			int m = Int32.Parse (nm [1]);
 			Console.WriteLine ("World dimensions: " + n.ToString () + " x " + m.ToString ());
-			double dp = Double.Parse (lines [1].Split(new char[]{' '},2)[0]);
+			double dp = Double.Parse (lines [1].Split(new char[]{' '},2)[0], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture);
 			Console.WriteLine ("Digression probability = 2*" + dp);
-			double nr = Double.Parse (lines [2].Split(new char[]{' '},2)[0]);
-			double sr = Double.Parse (lines [3].Split(new char[]{' '},2)[0]);
-			double tr = Double.Parse (lines [4].Split(new char[]{' '},2)[0]);
+			double nr = Double.Parse (lines [2].Split(new char[]{' '},2)[0], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture);
+			double sr = Double.Parse (lines [3].Split(new char[]{' '},2)[0], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture);
+			double tr = Double.Parse (lines [4].Split(new char[]{' '},2)[0], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture);
 			Console.WriteLine ("Rewards: " + nr + "," + sr + "," + tr + ".");
-			double discount = Double.Parse (lines [5].Split(new char[]{' '},2)[0]);
+			double discount = Double.Parse (lines [5].Split(new char[]{' '},2)[0], System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture);
 			Console.WriteLine ("Discount: " + discount);
 
 			World w = new World (n, m);
@@ -41,12 +41,9 @@ namespace learning
 				qlearning = true;
 			Console.WriteLine ();
 
-			if (!qlearning) {
-
-			} else {
-
+			if (qlearning) {
 				Console.Write ("Epsilon? ");
-				epsilon = double.Parse (Console.ReadLine ());
+				epsilon = double.Parse (Console.ReadLine (), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture);
 			}
 
 			Console.Write ("Interactive mode? [y/N] ");
