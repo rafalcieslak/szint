@@ -66,7 +66,7 @@ namespace learning
 		public void Display(){
 			foreach (State s in world.GetStates()) {
 				foreach (Move m in Move.All()) {
-					Console.WriteLine ();
+					Console.WriteLine ("State {0}, move '{1}': {2} (visited {3} times)", s.ToString(), m.ToString(), map[s.x,s.y,m.ToInt()].value, map[s.x,s.y,m.ToInt()].hits);
 				}
 			}
 		}

@@ -125,6 +125,7 @@ namespace learning
 		public void DisplayQ(){
 			Console.WriteLine ("Q function:");
 			optimalQ.Display ();
+			Console.WriteLine ();
 		}
 	}
 }
