@@ -63,6 +63,13 @@ namespace learning
 				r.Retract ();
 			}
 		}
+		public void Display(){
+			foreach (State s in world.GetStates()) {
+				foreach (Move m in Move.All()) {
+					Console.WriteLine ();
+				}
+			}
+		}
 	}
 }
 

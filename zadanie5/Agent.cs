@@ -7,6 +7,7 @@ namespace learning
 	{
 		UsabilityMap optimalU;
 		PolicyMap optimalP;
+		QFunction optimalQ;
 		World world;
 
 		public Agent (World w)
@@ -63,6 +64,13 @@ namespace learning
 			PolicyMap P = new PolicyMap(world);
 			QFunction Q = new QFunction (world);
 
+			// log header
+			log = "n ";
+			foreach (State s in world.GetAllowedStates()) {
+				log += s + " ";
+			}
+			log += "\n";
+
 			for (int i = 1; i < 100000; i++) {
 				// wygeneruj trase uzywajac polityki i epsilona
 				Route route = new Route ();
@@ -87,6 +95,12 @@ namespace learning
 				if (i % 10 == 0)
 					P = PolicyMap.CreateFromQFunction (Q);
 
+				// od czasu do czasu wpakuj wartosci do loga
+				if (i % 50 == 1) {
+					optimalU = UsabilityMap.CreateFromQFunction (Q);
+					log += i + " " + optimalU.LogData () + "\n";
+				}
+
 				if (interactive) {
 					optimalU = UsabilityMap.CreateFromQFunction (Q);
 					optimalP = PolicyMap.CreateFromQFunction (Q);
@@ -98,11 +112,19 @@ namespace learning
 			}
 			optimalU = UsabilityMap.CreateFromQFunction (Q);
 			optimalP = PolicyMap.CreateFromQFunction (Q);
+			optimalQ = Q;
 		}
 
 		public void Display(){
+			Console.WriteLine ("Usabilities:");
 			optimalU.Display ();
+			Console.WriteLine ("Policy:");
 			optimalP.Display ();
+		}
+
+		public void DisplayQ(){
+			Console.WriteLine ("Q function:");
+			optimalQ.Display ();
 		}
 	}
 }

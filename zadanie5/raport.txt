@@ -1,0 +1,39 @@
+Rafał Cieślak
+Ćwiczenie z procesów Markowa
+realizowane w ramach przedmiotu Sztuczna Inteligencja
+w ramach studiów na kierunku Informatyka
+na Uniwersytecie Wrocławskim
+semestr letni 2014/2015
+
+==============================
+Ćwiczenie z procesów Markowa
+==============================
+
+A. Użycie programu
+
+  Wykonany program załączam w pliku "learning.exe". Jest to plik skompilowany
+pod platformę Mono, ale ponieważ użyłem tylko podstawowych funkcjonalności
+środowiska, podejżewam, że program będzie działać równie poprawnie na
+platformie .NET.
+  Skoncentrowałem się na solidnym zaimplementowaniu algorytmów zamiast na
+elegancji programu, zatem jego interfejs jest bardzo prosty i ubogi.
+Bezpośredino po uruchomieniu programu należy wpisać nazwę pliku z zestawem
+danych, które mają zostać użyte do pracy - podany plik będzie szukany wewnątrz
+katalogu ./datasets, więc przykładową prawidłową wartością jest:
+    I.3
+  Program odpowie wypisując na ekran niektóre parametry wczytane z zestawu
+danych. Następnie (używając 1 klawisza) należy wybrać, który z algorytmów
+powinen zostać użyty do obliczeń. W przypadku wybrania Q-learningu należy też
+podać wartość zmiennej epsilon (współczynnika eksploracji). Pytanie o tryb
+interaktywny pozwala uruchomić algorytm w trybie, w którym po każdym kroku
+program wyświetla politykę.
+	Następnie program - po chwili obliczeń - wypisuje na ekran obliczoną funkcję
+użyteczności oraz politykę. Ostatnie pytanie umożliwia dokonanie automatycznej
+generacji skryptu i zestawu danych dla programu gnuplot, które wygenerują
+wykresy.
+	Aby utworzyć wykresy na podstawie tak spreparowanych danych, wystarczy
+wywołać:
+		gnuplot gnuplot.txt
+co wyprodukuje wykres w pliku plot.png.
+
+	Kody źródłowe programu załączyłem w katalogu ./src.
