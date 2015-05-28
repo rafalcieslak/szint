@@ -1,0 +1,331 @@
+Rafał Cieślak
+Ćwiczenie z procesów Markowa
+realizowane w ramach przedmiotu Sztuczna Inteligencja
+w ramach studiów na kierunku Informatyka
+na Uniwersytecie Wrocławskim
+semestr letni 2014/2015
+
+==============================
+Ćwiczenie z procesów Markowa
+==============================
+
+A. Użycie programu
+
+  Wykonany program załączam w pliku "learning.exe". Jest to plik skompilowany
+pod platformę Mono, ale ponieważ użyłem tylko podstawowych funkcjonalności
+środowiska, podejżewam, że program będzie działać równie poprawnie na
+platformie .NET.
+  Skoncentrowałem się na solidnym zaimplementowaniu algorytmów zamiast na
+elegancji programu, zatem jego interfejs jest bardzo prosty i ubogi.
+Bezpośredino po uruchomieniu programu należy wpisać nazwę pliku z zestawem
+danych, które mają zostać użyte do pracy - podany plik będzie szukany wewnątrz
+katalogu ./datasets, więc przykładową prawidłową wartością jest:
+    I.3
+  Program odpowie wypisując na ekran niektóre parametry wczytane z zestawu
+danych. Następnie (używając 1 klawisza) należy wybrać, który z algorytmów
+powinen zostać użyty do obliczeń. W przypadku wybrania Q-learningu należy też
+podać wartość zmiennej epsilon (współczynnika eksploracji). Pytanie o tryb
+interaktywny pozwala uruchomić algorytm w trybie, w którym po każdym kroku
+program wyświetla politykę.
+	Następnie program - po chwili obliczeń - wypisuje na ekran obliczoną funkcję
+użyteczności oraz politykę. Ostatnie pytanie umożliwia dokonanie automatycznej
+generacji skryptu i zestawu danych dla programu gnuplot, które wygenerują
+wykresy.
+	Aby utworzyć wykresy na podstawie tak spreparowanych danych, wystarczy
+wywołać:
+		gnuplot gnuplot.txt
+co wyprodukuje wykres w pliku plot.png.
+
+	Kody źródłowe programu załączyłem w katalogu ./src.
+
+B. Wyniki z komentarzami
+
+  Poniżej zamieszczam wyniki oraz komentarze do wszystkich zestawów danych,
+zgodnie z poleceniem. Wszystkie wykresy znajdują się w katalogu ./plots.
+
+Część I - Iteracja polityki
+
+1. N/A
+2. Plik danych: I.2
+   Wyniki:
+
+Converged in 18 steps.
+Usabilities:
+0.7477|0.8292|0.9028|1.0000|
+0.6760|0.7951|0.7214|-0.1516|
+0.5995|0.5531|0.6232|0.4757|
+
+Policy:
+>|>|>|.|
+^| |^|^|
+^|>|^|<|
+
+Wyniki są zgodne z intuicją. Ciężko porównać je do wników z wykładu, ponieważ
+każdy przykład na wykładzie używał nieco innych współczynników.
+Warto zauważyć jak szybko osięgnięta została zbieżność. Kryterium stopu które
+używam powoduje koniec pracy programu w momencie, gdy po kroku iteracji żadna
+z wartości użyteczności nie zmieni się o więcej niż 0.0001.
+
+3. Plik danych: I.3
+	 Wyniki:
+
+Converged in 32 steps.
+Usabilities:
+81.9384|84.2609|86.5860|88.8827|
+81.7354|84.2724|87.0596|91.5547|
+79.5936|80.5997|70.4670|94.5352|
+77.4526|78.2495|73.4566|100.0000|
+
+Policy:
+>|>|>|v|
+>|>|>|v|
+^|^|>|v|
+^|^| |.|
+
+Ponownie, dla takiego świata otrzymany wynik jest naturalny.
+
+4. Plik danych I.4
+   Wyniki:
+
+Converged in 121 steps.
+Usabilities:
+66.3310|68.6463|71.0124|73.3781|
+64.6099|66.7533|69.3608|75.8629|
+62.3692|60.8448|-131.2319|78.8962|
+60.1956|58.9882|-88.1959|100.0000|
+
+Policy:
+>|>|>|v|
+>|>|^|v|
+^|<|^|>|
+^|^| |.|
+
+Tym razem kara za pole specjalne jest 10x większa. Polityka zmieniła się tak,
+by ruchy wykonywane po trasie unikały "przypadkowego" wejścia w stan specjalny.
+Dodatkowo istotnie zmniejszyło to wartość użyteczności stanu początkowego.
+
+5. Plik danych I.5
+   Wyniki:
+
+Converged in 138 steps.
+Usabilities:
+58.1907|62.0978|66.2928|70.0989|
+56.7682|60.2574|65.3996|75.4383|
+53.9743|54.6079|50.1892|84.0019|
+51.0789|51.3925|62.3133|100.0000|
+
+Policy:
+>|>|>|v|
+^|>|^|v|
+^|^|>|>|
+^|^| |.|
+
+Przy większym współczynniku niepewności ruchu (tym razem ruch wykonywany jest w
+zadanym kierunku z prawdopodobieństwem zaledwie 0.5) optymalna polityka zadaje
+obejście niekorzystnego stanu terminalnego możliwie jak największym łukiem.
+
+
+6. Plik danych I.6
+   Wyniki:
+
+Converged in 22 steps.
+Usabilities:
+14.8586|20.6677|28.0289|37.2596|
+18.0326|25.9466|36.7562|51.6195|
+15.4768|22.1152|30.9674|71.1711|
+11.0060|15.2546|29.0395|100.0000|
+
+Policy:
+>|>|>|v|
+>|>|>|v|
+>|>|>|v|
+^|^| |.|
+
+W tym przypadku przecena jest dużo większa (0.8, wcześniej było 0.99). To
+powoduje, że nowa polityka nakazuje przejść po prostu do stanu końcowego jak
+najktótsza trasą - nawet wchodząc na niekorzystne pole specjalne, bo inaczej
+stracimy cenną nagrodę za stan końcowy. To jeszcze bardziej obniżyło wartość
+użyteczności stanu początkowego.
+
+Część II - Q-learning
+
+7. N/A
+8a. Plik danych II.8a
+    Epsilon: 0.2
+    Wyniki:
+
+Niestety, o ile politykę i funkcję użyteczności łatwo przedstawić w układzie
+graficznym, to wartości funkcji Q, które mam zamieścić, nie potrafię
+przedstawić w sposób równie czytelny - będzie to zatem lista wartośći.
+
+Q function:
+State {0,0}, move '^': 86.413069581398 (visited 42961 times)
+State {0,0}, move 'v': 88.2960298801974 (visited 85983 times)
+State {0,0}, move '<': 86.413069581398 (visited 42992 times)
+State {0,0}, move '>': 88.2957684674072 (visited 43002 times)
+State {1,0}, move '^': 88.2950934191992 (visited 47499 times)
+State {1,0}, move 'v': 90.1976199719411 (visited 47270 times)
+State {1,0}, move '<': 86.4130695813982 (visited 47173 times)
+State {1,0}, move '>': 90.1980099799999 (visited 94479 times)
+State {2,0}, move '^': 90.1956992107389 (visited 52673 times)
+State {2,0}, move 'v': 92.1192020000012 (visited 104786 times)
+State {2,0}, move '<': 88.2958873835864 (visited 52592 times)
+State {2,0}, move '>': 92.1076097645446 (visited 52378 times)
+State {3,0}, move '^': 92.0968641551448 (visited 42541 times)
+State {3,0}, move 'v': 94.0586976528989 (visited 86234 times)
+State {3,0}, move '<': 90.1956908031584 (visited 42555 times)
+State {3,0}, move '>': 92.1071698069829 (visited 42759 times)
+State {0,1}, move '^': 86.4130695813978 (visited 70458 times)
+State {0,1}, move 'v': 86.4130695813972 (visited 70535 times)
+State {0,1}, move '<': 88.2960298801982 (visited 71423 times)
+State {0,1}, move '>': 90.198009979999 (visited 141178 times)
+State {1,1}, move '^': 88.2959261946806 (visited 72278 times)
+State {1,1}, move 'v': 88.295824350876 (visited 72003 times)
+State {1,1}, move '<': 88.2960298801982 (visited 72096 times)
+State {1,1}, move '>': 92.1192020000015 (visited 143930 times)
+State {2,1}, move '^': 90.1976860285901 (visited 71068 times)
+State {2,1}, move 'v': 75.249799999999 (visited 70836 times)
+State {2,1}, move '<': 90.1980099800009 (visited 70801 times)
+State {2,1}, move '>': 94.0597999999987 (visited 142768 times)
+State {3,1}, move '^': 92.1045299482168 (visited 66732 times)
+State {3,1}, move 'v': 96.0199999999996 (visited 134501 times)
+State {3,1}, move '<': 92.1178144392473 (visited 67110 times)
+State {3,1}, move '>': 94.0583707012703 (visited 66508 times)
+State {0,2}, move '^': 88.2960298801983 (visited 147187 times)
+State {0,2}, move 'v': 84.5489388855839 (visited 73604 times)
+State {0,2}, move '<': 86.4130695813972 (visited 73163 times)
+State {0,2}, move '>': 88.2958284958645 (visited 73485 times)
+State {1,2}, move '^': 90.1980099799998 (visited 121776 times)
+State {1,2}, move 'v': 86.4111858565784 (visited 61071 times)
+State {1,2}, move '<': 86.4128286192319 (visited 60801 times)
+State {1,2}, move '>': 75.2497999999987 (visited 61090 times)
+State {2,2}, move '^': 73.1192019999993 (visited 52501 times)
+State {2,2}, move 'v': 56.2497999999983 (visited 52988 times)
+State {2,2}, move '<': 69.2960298801993 (visited 52702 times)
+State {2,2}, move '>': 77.0200000000005 (visited 105474 times)
+State {3,2}, move '^': 94.0597999999999 (visited 55552 times)
+State {3,2}, move 'v': 97.9999999999998 (visited 110836 times)
+State {3,2}, move '<': 75.249799999999 (visited 55116 times)
+State {3,2}, move '>': 96.0200000000012 (visited 55067 times)
+State {0,3}, move '^': 86.4130695813949 (visited 157906 times)
+State {0,3}, move 'v': 84.5487547165388 (visited 78755 times)
+State {0,3}, move '<': 84.5489388855839 (visited 79118 times)
+State {0,3}, move '>': 86.4113263833266 (visited 79517 times)
+State {1,3}, move '^': 88.2958852299994 (visited 102307 times)
+State {1,3}, move 'v': 86.4113581532571 (visited 50969 times)
+State {1,3}, move '<': 84.5489388855839 (visited 50973 times)
+State {1,3}, move '>': 86.411644594879 (visited 50842 times)
+State {2,3}, move '^': 0 (visited 0 times)
+State {2,3}, move 'v': 0 (visited 0 times)
+State {2,3}, move '<': 0 (visited 0 times)
+State {2,3}, move '>': 0 (visited 0 times)
+State {3,3}, move '^': 100 (visited 0 times)
+State {3,3}, move 'v': 100 (visited 0 times)
+State {3,3}, move '<': 100 (visited 0 times)
+State {3,3}, move '>': 100 (visited 0 times)
+
+Usabilities:
+88.2960|90.1980|92.1192|94.0587|
+90.1980|92.1192|94.0598|96.0200|
+88.2960|90.1980|77.0200|98.0000|
+86.4131|88.2959|0.0000|100.0000|
+
+Policy:
+v|>|v|v|
+>|>|>|v|
+^|^|>|v|
+^|^| |.|
+
+Otrzymana polityka jest podobna do wyniku z I.3, i zgodna z intuicją.
+Wykres utworzony dla tego przypadku jest bardzo nudny, ponieważ algorytm
+wykonał o wiele więcej kroków niż było potrzebne do osiągnięcia zadowalającej
+zbieżności. Zgodnie z prośbą z treści zadania wykonuję q-leraning za pomocą
+100000 wygenerowanych tras, podczas gdy spokojnie wystarczyłoby 10 czy nawet 20
+razy mniej.
+
+8b. Plik danych II.8b
+    Epsilon 0.05
+
+Q function:
+State {0,0}, move '^': 86.2929109770892 (visited 127333 times)
+State {0,0}, move 'v': 88.2715239703158 (visited 153277 times)
+State {0,0}, move '<': 86.296024343094 (visited 127173 times)
+State {0,0}, move '>': 88.264401028123 (visited 127604 times)
+State {1,0}, move '^': 88.2646490125113 (visited 123646 times)
+State {1,0}, move 'v': 90.1938822735198 (visited 150597 times)
+State {1,0}, move '<': 86.2908921748467 (visited 124362 times)
+State {1,0}, move '>': 90.1863700642052 (visited 124292 times)
+State {2,0}, move '^': 90.1847179174526 (visited 114324 times)
+State {2,0}, move 'v': 92.1185276043548 (visited 138078 times)
+State {2,0}, move '<': 88.2650127440918 (visited 114223 times)
+State {2,0}, move '>': 92.1015853248726 (visited 113943 times)
+State {3,0}, move '^': 92.1006066247801 (visited 104782 times)
+State {3,0}, move 'v': 94.0584006521836 (visited 126477 times)
+State {3,0}, move '<': 90.1865343939173 (visited 104468 times)
+State {3,0}, move '>': 92.1017837630728 (visited 104054 times)
+State {0,1}, move '^': 86.2929113639943 (visited 148524 times)
+State {0,1}, move 'v': 86.3135856375608 (visited 147660 times)
+State {0,1}, move '<': 88.2699896253906 (visited 147438 times)
+State {0,1}, move '>': 90.1944419435214 (visited 178415 times)
+State {1,1}, move '^': 88.2668931078235 (visited 149991 times)
+State {1,1}, move 'v': 88.2709519907842 (visited 150505 times)
+State {1,1}, move '<': 88.2710220326566 (visited 150779 times)
+State {1,1}, move '>': 92.118926054786 (visited 182349 times)
+State {2,1}, move '^': 90.1882553343005 (visited 129869 times)
+State {2,1}, move 'v': 75.2419464789651 (visited 129729 times)
+State {2,1}, move '<': 90.1933853749572 (visited 129293 times)
+State {2,1}, move '>': 94.0597999999991 (visited 157403 times)
+State {3,1}, move '^': 92.1034209329065 (visited 112276 times)
+State {3,1}, move 'v': 96.0199999999995 (visited 136212 times)
+State {3,1}, move '<': 92.1162113445957 (visited 112749 times)
+State {3,1}, move '>': 94.0550769490611 (visited 112418 times)
+State {0,2}, move '^': 88.2692148826051 (visited 171791 times)
+State {0,2}, move 'v': 84.2018757020711 (visited 171492 times)
+State {0,2}, move '<': 86.3096515020054 (visited 171782 times)
+State {0,2}, move '>': 88.2733111155918 (visited 207878 times)
+State {1,2}, move '^': 90.1943214131121 (visited 192415 times)
+State {1,2}, move 'v': 86.2932232721244 (visited 159222 times)
+State {1,2}, move '<': 86.3119754570325 (visited 159584 times)
+State {1,2}, move '>': 75.2423752331821 (visited 158796 times)
+State {2,2}, move '^': 73.1180008717376 (visited 119419 times)
+State {2,2}, move 'v': 56.2428393035029 (visited 119179 times)
+State {2,2}, move '<': 69.2717979844257 (visited 119700 times)
+State {2,2}, move '>': 77.0193301712907 (visited 144843 times)
+State {3,2}, move '^': 94.0586766007242 (visited 84618 times)
+State {3,2}, move 'v': 98.0000000000003 (visited 103563 times)
+State {3,2}, move '<': 75.2409649237368 (visited 84756 times)
+State {3,2}, move '>': 96.0188668535376 (visited 85620 times)
+State {0,3}, move '^': 86.3131665428115 (visited 246255 times)
+State {0,3}, move 'v': 84.1909663842639 (visited 203550 times)
+State {0,3}, move '<': 84.1951804244754 (visited 203912 times)
+State {0,3}, move '>': 86.2861891099358 (visited 204721 times)
+State {1,3}, move '^': 88.2696875869579 (visited 203359 times)
+State {1,3}, move 'v': 86.288358063726 (visited 168186 times)
+State {1,3}, move '<': 84.1925860112597 (visited 168322 times)
+State {1,3}, move '>': 86.2913026707647 (visited 168804 times)
+State {2,3}, move '^': 0 (visited 0 times)
+State {2,3}, move 'v': 0 (visited 0 times)
+State {2,3}, move '<': 0 (visited 0 times)
+State {2,3}, move '>': 0 (visited 0 times)
+State {3,3}, move '^': 100 (visited 0 times)
+State {3,3}, move 'v': 100 (visited 0 times)
+State {3,3}, move '<': 100 (visited 0 times)
+State {3,3}, move '>': 100 (visited 0 times)
+
+Usabilities:
+88.2715|90.1939|92.1185|94.0584|
+90.1944|92.1189|94.0598|96.0200|
+88.2733|90.1943|77.0193|98.0000|
+86.3132|88.2697|0.0000|100.0000|
+
+Policy:
+v|v|v|v|
+>|>|>|v|
+>|^|>|v|
+^|^| |.|
+
+Przy dużo mniejszym epsilonie wyprodukowana polityka nie jest bardzo różna od
+poprzedniej. Wyraźnie widoczna jest natomiast różnica pomiędzy ilością odwiedzin
+w różnych stanach - liczby są tym razem dużo bardziej równomiernie rozłożone,
+co wydaje się sensowne, ponieważ tym razem generowene trasy są bardziej losowe
+niż poprzednio.
