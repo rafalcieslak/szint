@@ -10,222 +10,223 @@ semestr letni 2014/2015
 ===========================================
 
 1.
-	Dane których użyłem do zadania to wyniki analizy składu chemicznego szkła
-	pochodzącego z różnych źródeł - są liczbami prawdziwymi, pochodzącymi z
-	badań chemicznych. Celem jest stworzyć model, który potrafi rozpoznać
-	pochodzenie szkła znając jedynie jego skład chemiczny. To zdolność cenna
-	w kryminalistyce, ponieważ znalezione odłamki szkła mogą służyć za dowód.
-	
-	Zestaw danych, na którm pracuję, znalazłem na stronie [1]. Zawiera on 214
-	rekordów, dla każdego po 9 wartości liczbowych, oraz kategorię pochodzenia
-	szkła. W tym zestawie danych rozpatrywano następujące gatunki:
-		- Szyby w budynkach (floatowe)
-		- Szyby w budynkach (nie floatowe)
-		- Szyby samochodowe
-		- Opakowania
-		- Naczynia
-		- Reflektory samochodowe
-	Atrybuty występujące w danych:
-		- Współczynnik załamania światła
-		- Sód (procent masy tlenku, podobnie dla pozostałych pierwiastków)
-		- Magnez
-		- Aluminium
-		- Krzem
-		- Potas
-		- Wapno
-		- Bar
-		- Żelazo
-	W zestawie danych nie ma próbek z brakującymi wartościami atrybutów.
-	Dane wymagały wstępnej obróbki, przede wszystkim brakowało nagłówka csv,
-	dodatkowo zdecydowałem się przemianować numery gatunków szkła na nazwy, by
-	interpretacja wyników była czytelniejsza.
-	
+ Dane których użyłem do zadania to wyniki analizy składu chemicznego szkła
+ pochodzącego z różnych źródeł - są liczbami prawdziwymi, pochodzącymi z
+ badań chemicznych. Celem jest stworzyć model, który potrafi rozpoznać
+ pochodzenie szkła znając jedynie jego skład chemiczny. To zdolność cenna
+ w kryminalistyce, ponieważ znalezione odłamki szkła mogą służyć za dowód.
+
+ Zestaw danych, na którym pracuję, znalazłem na stronie [1]. Zawiera on 214
+ rekordów, dla każdego po 9 wartości liczbowych, oraz kategorię pochodzenia
+ szkła. W tym zestawie danych rozpatrywano następujące gatunki:
+ - Szyby w budynkach (floatowe)
+ - Szyby w budynkach (nie floatowe)
+ - Szyby samochodowe
+ - Opakowania
+ - Naczynia
+ - Reflektory samochodowe
+ Atrybuty występujące w danych:
+ - Współczynnik załamania światła
+ - Sód (procent masy tlenku, podobnie dla pozostałych pierwiastków)
+ - Magnez
+ - Aluminium
+ - Krzem
+ - Potas
+ - Wapno
+ - Bar
+ - Żelazo
+ W zestawie danych nie ma próbek z brakującymi wartościami atrybutów.
+ Dane wymagały wstępnej obróbki, przede wszystkim brakowało nagłówka csv,
+ dodatkowo zdecydowałem się przemianować numery gatunków szkła na nazwy, by
+ interpretacja wyników była czytelniejsza.
+
 2.
-	Do pracy wybrałem program WEKA.
-	Ponieważ w moim zestawie danych występują wartości liczbowe, zastanawiałem
-	się nad ich dyskretyzacją. Jednak wstępne eksperymenty wskazały mi, że to
-	zły pomysł - lepiej zosawić dyskretyzację algorytmowi klasifikującemu - po
-	ręcznym dyskretyzowaniu danych zawsze otrzymywałem gorsze wyniki, niż
-	zostawiając wartośi w niepogrupowanej postaci. Te z algorytmów, które wymagały
-	danych o dyskretnych wartościach, dokonują dyskretyzacji samoczynnie dużo
-	lepiej dobierając przedziały, niż ja zrobiłbym to ręcznie.
-	Natknąłem się na problem z programem WEKA, który uniemożliwił mi ręczne
-	podzielenie zbioru próbek na zbiór uczący i testujący. Zamiast podziału
-	ręcznego użyję w tym celu gotowych funkcji WEKI dzielących cały zbiór
-	zgodnie z podaną proporcją.
-	
-	Na sam początek, by dokonać oglądu danych, wykonałem klasyfikację za pomocą
-	algorytmu ZeroR - który tworzy model przypisujący wszystkim próbkom tę
-	samą wartość. Przećwiczyłem go na całym zbiorze danych, i sprawdziłem
-	poprawność klasyfikacji dla tego samego zbioru - otrzymałem 35%, co stanowi
-	dobrą orientacyjną wyjściową liczbę, reprezentującą wynik najbardziej naiwnej
-	metody.
-	
-3. 
-	Aby otrzymać lepsze wyniki, zacząłem od wypróbowania innych algorytmów.
-	Uruchomiłem algorytm trees.J48 (C4.5) w trybie 10-krotnej walidacji krzyżowej.
-	Zbudowany model okazał się ciekawy, ale nieintuicyjny:
-	
+ Do pracy wybrałem program WEKA.
+ Ponieważ w moim zestawie danych występują wartości liczbowe, zastanawiałem
+ się nad ich dyskretyzacją. Jednak wstępne eksperymenty wskazały mi, że to
+ zły pomysł - lepiej zosatwić dyskretyzację algorytmowi klasyfikującemu - po
+ ręcznym dyskredytowaniu danych zawsze otrzymywałem gorsze wyniki, niż
+ zostawiając wartości w niepogrupowanej postaci. Te z algorytmów, które wymagały
+ danych o dyskretnych wartościach, dokonują dyskretyzacji samoczynnie dużo
+ lepiej dobierając przedziały, niż ja zrobiłbym to ręcznie.
+ Natknąłem się na problem z programem WEKA, który uniemożliwił mi ręczne
+ podzielenie zbioru próbek na zbiór uczący i testujący. Zamiast podziału
+ ręcznego użyję w tym celu gotowych funkcji WEKI dzielących cały zbiór
+ zgodnie z podaną proporcją.
+
+ Na sam początek, by dokonać oglądu danych, wykonałem klasyfikację za pomocą
+ algorytmu ZeroR - który tworzy model przypisujący wszystkim próbkom tę
+ samą wartość. Przećwiczyłem go na całym zbiorze danych, i sprawdziłem
+ poprawność klasyfikacji dla tego samego zbioru - otrzymałem 35%, co stanowi
+ dobrą orientacyjną wyjściową liczbę, reprezentującą wynik najbardziej naiwnej
+ metody.
+
+3.
+ Aby otrzymać lepsze wyniki, zacząłem od wypróbowania innych algorytmów.
+ Uruchomiłem algorytm trees.J48 (C4.5) w trybie 10-krotnej walidacji krzyżowej.
+ Zbudowany model okazał się ciekawy, ale nieintuicyjny:
+
 Ba <= 0.27
-|   Mg <= 2.41
-|   |   K <= 0.03
-|   |   |   Na <= 13.75: building_windows_non_float (3.0)
-|   |   |   Na > 13.75: tableware (9.0)
-|   |   K > 0.03
-|   |   |   Na <= 13.49
-|   |   |   |   RI <= 1.5241: containers (13.0/1.0)
-|   |   |   |   RI > 1.5241: building_windows_non_float (3.0)
-|   |   |   Na > 13.49: building_windows_non_float (7.0/1.0)
-|   Mg > 2.41
-|   |   Al <= 1.41
-|   |   |   RI <= 1.51707
-|   |   |   |   RI <= 1.51596: building_windows_float (3.0)
-|   |   |   |   RI > 1.51596
-|   |   |   |   |   Fe <= 0.12
-|   |   |   |   |   |   Mg <= 3.54: vehicle_windows (5.0)
-|   |   |   |   |   |   Mg > 3.54
-|   |   |   |   |   |   |   RI <= 1.51667: building_windows_non_float (2.0)
-|   |   |   |   |   |   |   RI > 1.51667: vehicle_windows (2.0)
-|   |   |   |   |   Fe > 0.12: building_windows_non_float (2.0)
-|   |   |   RI > 1.51707
-|   |   |   |   K <= 0.23
-|   |   |   |   |   Mg <= 3.34: building_windows_non_float (2.0)
-|   |   |   |   |   Mg > 3.34
-|   |   |   |   |   |   Si <= 72.64
-|   |   |   |   |   |   |   Na <= 14.01: building_windows_float (14.0)
-|   |   |   |   |   |   |   Na > 14.01
-|   |   |   |   |   |   |   |   RI <= 1.52211
-|   |   |   |   |   |   |   |   |   Na <= 14.32: vehicle_windows (3.0)
-|   |   |   |   |   |   |   |   |   Na > 14.32: building_windows_float (2.0)
-|   |   |   |   |   |   |   |   RI > 1.52211: building_windows_float (3.0)
-|   |   |   |   |   |   Si > 72.64: vehicle_windows (3.0)
-|   |   |   |   K > 0.23
-|   |   |   |   |   Mg <= 3.75
-|   |   |   |   |   |   Fe <= 0.14
-|   |   |   |   |   |   |   RI <= 1.52043: building_windows_float (36.0)
-|   |   |   |   |   |   |   RI > 1.52043: building_windows_non_float (2.0/1.0)
-|   |   |   |   |   |   Fe > 0.14
-|   |   |   |   |   |   |   Al <= 1.17: building_windows_non_float (5.0)
-|   |   |   |   |   |   |   Al > 1.17: building_windows_float (6.0/1.0)
-|   |   |   |   |   Mg > 3.75: building_windows_non_float (10.0)
-|   |   Al > 1.41
-|   |   |   Si <= 72.49
-|   |   |   |   Ca <= 8.28: building_windows_non_float (6.0)
-|   |   |   |   Ca > 8.28: vehicle_windows (5.0/1.0)
-|   |   |   Si > 72.49
-|   |   |   |   RI <= 1.51732
-|   |   |   |   |   Fe <= 0.22: building_windows_non_float (30.0/1.0)
-|   |   |   |   |   Fe > 0.22
-|   |   |   |   |   |   RI <= 1.51629: building_windows_float (2.0)
-|   |   |   |   |   |   RI > 1.51629: building_windows_non_float (2.0)
-|   |   |   |   RI > 1.51732
-|   |   |   |   |   RI <= 1.51789: building_windows_float (3.0)
-|   |   |   |   |   RI > 1.51789: building_windows_non_float (2.0)
+| Mg <= 2.41
+| | K <= 0.03
+| | | Na <= 13.75: building_windows_non_float (3.0)
+| | | Na > 13.75: tableware (9.0)
+| | K > 0.03
+| | | Na <= 13.49
+| | | | RI <= 1.5241: containers (13.0/1.0)
+| | | | RI > 1.5241: building_windows_non_float (3.0)
+| | | Na > 13.49: building_windows_non_float (7.0/1.0)
+| Mg > 2.41
+| | Al <= 1.41
+| | | RI <= 1.51707
+| | | | RI <= 1.51596: building_windows_float (3.0)
+| | | | RI > 1.51596
+| | | | | Fe <= 0.12
+| | | | | | Mg <= 3.54: vehicle_windows (5.0)
+| | | | | | Mg > 3.54
+| | | | | | | RI <= 1.51667: building_windows_non_float (2.0)
+| | | | | | | RI > 1.51667: vehicle_windows (2.0)
+| | | | | Fe > 0.12: building_windows_non_float (2.0)
+| | | RI > 1.51707
+| | | | K <= 0.23
+| | | | | Mg <= 3.34: building_windows_non_float (2.0)
+| | | | | Mg > 3.34
+| | | | | | Si <= 72.64
+| | | | | | | Na <= 14.01: building_windows_float (14.0)
+| | | | | | | Na > 14.01
+| | | | | | | | RI <= 1.52211
+| | | | | | | | | Na <= 14.32: vehicle_windows (3.0)
+| | | | | | | | | Na > 14.32: building_windows_float (2.0)
+| | | | | | | | RI > 1.52211: building_windows_float (3.0)
+| | | | | | Si > 72.64: vehicle_windows (3.0)
+| | | | K > 0.23
+| | | | | Mg <= 3.75
+| | | | | | Fe <= 0.14
+| | | | | | | RI <= 1.52043: building_windows_float (36.0)
+| | | | | | | RI > 1.52043: building_windows_non_float (2.0/1.0)
+| | | | | | Fe > 0.14
+| | | | | | | Al <= 1.17: building_windows_non_float (5.0)
+| | | | | | | Al > 1.17: building_windows_float (6.0/1.0)
+| | | | | Mg > 3.75: building_windows_non_float (10.0)
+| | Al > 1.41
+| | | Si <= 72.49
+| | | | Ca <= 8.28: building_windows_non_float (6.0)
+| | | | Ca > 8.28: vehicle_windows (5.0/1.0)
+| | | Si > 72.49
+| | | | RI <= 1.51732
+| | | | | Fe <= 0.22: building_windows_non_float (30.0/1.0)
+| | | | | Fe > 0.22
+| | | | | | RI <= 1.51629: building_windows_float (2.0)
+| | | | | | RI > 1.51629: building_windows_non_float (2.0)
+| | | | RI > 1.51732
+| | | | | RI <= 1.51789: building_windows_float (3.0)
+| | | | | RI > 1.51789: building_windows_non_float (2.0)
 Ba > 0.27
-|   Si <= 70.16: building_windows_non_float (2.0/1.0)
-|   Si > 70.16: headlamps (27.0/1.0)
+| Si <= 70.16: building_windows_non_float (2.0/1.0)
+| Si > 70.16: headlamps (27.0/1.0)
 
-	Poprawność klasyfikacji jaką osiągnął taki model nie jest zachwycająca:
-	zaledwie 66%. Macierz błędów wskazuje na jasny problem:
-	
-  a  b  c  d  e  f   <-- classified as
- 50 14  4  0  1  1 |  a = building_windows_float
- 16 43  8  5  2  2 |  b = building_windows_non_float
-  7  5  5  0  0  0 |  c = vehicle_windows
-  0  1  0 11  0  1 |  d = containers
-  1  0  0  0  8  0 |  e = tableware
-  2  3  0  0  0 24 |  f = headlamps
-	
-	Wyraźnie widoczna jest trudnosć z odróżnieniem szkła floatowego w szybach
-	budynków.
-	
-	Wypróbowałem wiele innych algorytmów, którymi potrafi pracować WEKA, ale żaden
-	nie dał istotnie ciekawego wyniku w trybie walidacji 10-krotnej. Jedynie
-	interesujący okazał się klasifykator BayesNet, który osiągnął poprawność aż 
-	75%, istotnie więcej, niż omówiony wcześniej trees.J48, ale też miał problem
-	z rozróżnieniem gatunku szkła z budynków.
-	
-	W takim razie zainteresowałem się czy bardzo poprawią się wyniki, jeżeli
-	oba gatunki szkła w oknach pogrupuję jako jeden. Przygotowałem w ten sposób
-	nowy zestaw danych, gdzie wartości "building_windows_float" oraz 
-	"building_windows_non_float" połączyłem w jedną.
-	
-	Tym razem algorytm BayesNet osiągnął poprawność 81%, a trees.J48 aż 94%.
-	Tym razem macierz pomyłek trees.J48 jest bardziej optymistyczna:
-	
-	 a   b   c   d   e   <-- classified as
- 144   0   1   1   0 |   a = building_windows
-   8   9   0   0   0 |   b = vehicle_windows
-   0   0  12   0   1 |   c = containers
-   0   0   0   9   0 |   d = tableware
-   3   0   0   0  26 |   e = headlamps
+ Poprawność klasyfikacji jaką osiągnął taki model nie jest zachwycająca:
+ zaledwie 66%. Macierz błędów wskazuje na jasny problem:
 
-	Zainteresowało mnie też, że tym razem drzewo zbudowane prezz J48 jest dużo
-	dużo prostsze i ma płytszą strukturę. To bardzo obiecujące wskazanie, ponieważ
-	prostota sugeruje mi, że jesteśmy bliżej prawdziwego, ukrytego modelu.
-	
+ a b c d e f <-- classified as
+ 50 14 4 0 1 1 | a = building_windows_float
+ 16 43 8 5 2 2 | b = building_windows_non_float
+ 7 5 5 0 0 0 | c = vehicle_windows
+ 0 1 0 11 0 1 | d = containers
+ 1 0 0 0 8 0 | e = tableware
+ 2 3 0 0 0 24 | f = headlamps
+
+ Wyraźnie widoczna jest trudność z odróżnieniem szkła floatowego w szybach
+ budynków.
+
+ Wypróbowałem wiele innych algorytmów, którymi potrafi pracować WEKA, ale żaden
+ nie dał istotnie ciekawego wyniku w trybie walidacji 10-krotnej. Jedynie
+ interesujący okazał się klasyfikator BayesNet, który osiągnął poprawność aż
+ 75%, istotnie więcej, niż omówiony wcześniej trees.J48, ale też miał problem
+ z rozróżnieniem gatunku szkła z budynków.
+
+ W takim razie zainteresowałem się czy bardzo poprawią się wyniki, jeżeli
+ oba gatunki szkła w oknach pogrupuję jako jeden. Przygotowałem w ten sposób
+ nowy zestaw danych, gdzie wartości "building_windows_float" oraz
+ "building_windows_non_float" połączyłem w jedną.
+
+ Tym razem algorytm BayesNet osiągnął poprawność 81%, a trees.J48 aż 94%.
+ Tym razem macierz pomyłek trees.J48 jest bardziej optymistyczna:
+
+ a b c d e <-- classified as
+ 144 0 1 1 0 | a = building_windows
+ 8 9 0 0 0 | b = vehicle_windows
+ 0 0 12 0 1 | c = containers
+ 0 0 0 9 0 | d = tableware
+ 3 0 0 0 26 | e = headlamps
+
+ Zainteresowało mnie też, że tym razem drzewo zbudowane przez J48 jest dużo
+ dużo prostsze i ma płytszą strukturę. To bardzo obiecujące wskazanie, ponieważ
+ prostota sugeruje mi, że jesteśmy bliżej prawdziwego, ukrytego modelu.
+
 Ba <= 0.27
-|   K <= 0
-|   |   RI <= 1.52043: tableware (10.0/1.0)
-|   |   RI > 1.52043: building_windows (4.0/1.0)
-|   K > 0
-|   |   Mg <= 2.24
-|   |   |   Al <= 1.38: building_windows (6.0/1.0)
-|   |   |   Al > 1.38
-|   |   |   |   Na <= 13.49: containers (13.0/1.0)
-|   |   |   |   Na > 13.49: building_windows (3.0/1.0)
-|   |   Mg > 2.24
-|   |   |   Ca <= 8.31: building_windows (52.0)
-|   |   |   Ca > 8.31
-|   |   |   |   RI <= 1.51707
-|   |   |   |   |   Si <= 72.72: vehicle_windows (6.0)
-|   |   |   |   |   Si > 72.72: building_windows (9.0/2.0)
-|   |   |   |   RI > 1.51707
-|   |   |   |   |   Na <= 13.31: building_windows (50.0)
-|   |   |   |   |   Na > 13.31
-|   |   |   |   |   |   Al <= 1.47: building_windows (29.0/6.0)
-|   |   |   |   |   |   Al > 1.47: vehicle_windows (3.0)
+| K <= 0
+| | RI <= 1.52043: tableware (10.0/1.0)
+| | RI > 1.52043: building_windows (4.0/1.0)
+| K > 0
+| | Mg <= 2.24
+| | | Al <= 1.38: building_windows (6.0/1.0)
+| | | Al > 1.38
+| | | | Na <= 13.49: containers (13.0/1.0)
+| | | | Na > 13.49: building_windows (3.0/1.0)
+| | Mg > 2.24
+| | | Ca <= 8.31: building_windows (52.0)
+| | | Ca > 8.31
+| | | | RI <= 1.51707
+| | | | | Si <= 72.72: vehicle_windows (6.0)
+| | | | | Si > 72.72: building_windows (9.0/2.0)
+| | | | RI > 1.51707
+| | | | | Na <= 13.31: building_windows (50.0)
+| | | | | Na > 13.31
+| | | | | | Al <= 1.47: building_windows (29.0/6.0)
+| | | | | | Al > 1.47: vehicle_windows (3.0)
 Ba > 0.27
-|   Si <= 72.14
-|   |   Na <= 13.9: building_windows (2.0)
-|   |   Na > 13.9: headlamps (3.0/1.0)
-|   Si > 72.14: headlamps (24.0)
+| Si <= 72.14
+| | Na <= 13.9: building_windows (2.0)
+| | Na > 13.9: headlamps (3.0/1.0)
+| Si > 72.14: headlamps (24.0)
 
-	Skoro udało się osiągnąć tak dobry wynik, postanowiłem ocenić jak wpływa
-	wielość zbioru uczącego na poprawność klasyfikacji. Zacząłem od nauczenia
-	algorytmu J48 używając tylko 20 próbek. Pozostałych próbek użyłem to
-	przetestowania powstałego modelu. Następnie stopniowo zwiększałem liczność
-	zbioru uczącego.
-	
-	próbki w zbiorze uczącym | poprawność klasyfikacji
-	                      20 | 62%
-											  43 | 80%
-											  64 | 83%
-											  86 | 84%
-												
-	Zanotowałem tylko niektóre wartości. W praktyce okazuje się, że czasami
-	zwiększenie liczby próbek uczących znacząco pogarsza poprawność klasyfikacji.
-	Dla przykładu, uczenie za pomocą 90 próbek zmniejszyło szanse sukcesu aż do
-	77%. To zjawisko wydaje mi się zrozumiałe, pokazanie uczącemu się algorytmowi
-	nowych, odmiennych próbek może spowodować drastyczną zmianę modelu,
-	niekoniecznie w dobrą stronę, co może znacząco popsuć poprawność klasyfikacji.
-	Z tego też powodu ciężko określić minimalną liczbę próbek potrzebną do
-	sensownych wyników, ale zauważyłem, że zwiększanie zbioru uczącego powyżej 60
-	rekordów nie poprawia znacząco wyniku.
-	
-	Dodatkowo, zainteresowałem się, czy dałoby się rozróżniać szkło oknowe, które
-	w dotychczasowym modelu pogrupowałem w jeden rodzaj. Przygotowałem nowy
-	zestaw danych, poprzez wybranie z oryginalnego zbiory tylko próbek, które
-	dotyczą się jednego ze szkieł stosowanych w budynkach. Dla tych danych
-	najskuteczniejszy okazał się, ponownie, algorytm trees.J48, osiągając
-	poprawność 72%. 
-	
-  a  b   <-- classified as
- 28 13 |  a = building_windows_float
- 12 35 |  b = building_windows_non_float
-	
-	Taki wynik oznacza, że zdecydowanie opłaca się podzielić problem klasyfikacji
-	szkła na takie właśnie 2 warstwy.
+ Skoro udało się osiągnąć tak dobry wynik, postanowiłem ocenić jak wpływa
+ wielość zbioru uczącego na poprawność klasyfikacji. Zacząłem od nauczenia
+ algorytmu J48 używając tylko 20 próbek. Pozostałych próbek użyłem to
+ przetestowania powstałego modelu. Następnie stopniowo zwiększałem liczność
+ zbioru uczącego.
+
+ próbki w zbiorze uczącym | poprawność klasyfikacji
+ 20 | 62%
+ 43 | 80%
+ 64 | 83%
+ 86 | 84%
+
+ Zanotowałem tylko niektóre wartości. W praktyce okazuje się, że czasami
+ zwiększenie liczby próbek uczących znacząco pogarsza poprawność klasyfikacji.
+ Dla przykładu, uczenie za pomocą 90 próbek zmniejszyło szanse sukcesu aż do
+ 77%. To zjawisko wydaje mi się zrozumiałe, pokazanie uczącemu się algorytmowi
+ nowych, odmiennych próbek może spowodować drastyczną zmianę modelu,
+ niekoniecznie w dobrą stronę, co może znacząco popsuć poprawność klasyfikacji.
+ Z tego też powodu ciężko określić minimalną liczbę próbek potrzebną do
+ sensownych wyników, ale zauważyłem, że zwiększanie zbioru uczącego powyżej 60
+ rekordów nie poprawia znacząco wyniku.
+
+ Dodatkowo, zainteresowałem się, czy dałoby się rozróżniać szkło oknowe, które
+ w dotychczasowym modelu pogrupowałem w jeden rodzaj. Przygotowałem nowy
+ zestaw danych, poprzez wybranie z oryginalnego zbiory tylko próbek, które
+ dotyczą się jednego ze szkieł stosowanych w budynkach. Dla tych danych
+ najskuteczniejszy okazał się, ponownie, algorytm trees.J48, osiągając
+ poprawność 72%.
+
+ a b <-- classified as
+ 28 13 | a = building_windows_float
+ 12 35 | b = building_windows_non_float
+
+ Taki wynik oznacza, że zdecydowanie opłaca się podzielić problem klasyfikacji
+ szkła na takie właśnie 2 warstwy.
 
 
  [1] http://archive.ics.uci.edu/ml/datasets/Glass+Identification
+
